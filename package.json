@@ -1,0 +1,26 @@
+{
+  "name": "ic819",
+  "version": "1.0.0",
+  "description": "Repositório criado para as tarefas da disciplina [IC819] Projeto de Software.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taernsietr/IC819.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taernsietr/IC819/issues"
+  },
+  "homepage": "https://github.com/taernsietr/IC819#readme",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "express": "^4.18.1",
+    "mariadb": "^3.0.0",
+    "sequelize": "^6.21.3",
+    "typescript": "^4.7.4"
+  }
+}
