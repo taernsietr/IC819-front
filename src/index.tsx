@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './front/index.css';
 import App from './front/App';
 // import reportWebVitals from './reportWebVitals';
 
