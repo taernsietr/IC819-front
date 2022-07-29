@@ -1,25 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
+// import from './assets/icons';
+// import logo from './assets/svg/logo.svg';
 import './App.css';
+import Menu from './components/Menu/Menu'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Menu/>
+        
+        <body>
+            <div className="menuContainer">
+                <h1 id="menuName">Pratos classicos</h1>
+                <p id="menuDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <div className="cardDeckItem">
+                    <div className="cardItem">
+                        <img src="Antepasto de berinjela.jpg" alt=""/> 
+                        <div className="cardItemText">
+                            <p id="cardItemName">Antespasto de berinjela</p>
+                            <p id="cardItemDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <p id="cardItemWeight">(250gr)</p>
+                            <p id="cardItemPrice">R$ 10,00</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </body>
+
+        <div className="menuMobileOptionsClient">
+            <nav className="cardBottom">
+                <img id="cartBottom" src="cart.svg" />
+                <p id="cardBottomText">Carrinho</p>
+            </nav>
+
+            <nav className="cardBottom">
+                <img id="profileBottom" src="profile.svg"/>
+                <p>Perfil</p>
+            </nav>
+        </div>
+<Footer/>
+
+</div>
   );
 }
 
