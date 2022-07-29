@@ -4,8 +4,8 @@ const sequelize = new Sequelize("mariadb://root:mayana@localhost:3306/IC819");
 class Address extends Model<InferAttributes<Address>, InferCreationAttributes<Address>> {
 	declare id: string; // TODO: verificar se é o tipo correto para armazenar um UUIDV4 em TS
 	declare street: string;
-	declare number: string;
-	declare additionalInfo: string;
+	declare number: CreationOptional<string>;
+	declare additionalInfo: CreationOptional<string>;
 	declare district: string;
 	declare city: string;
 	declare postCode: string;
@@ -28,7 +28,7 @@ Address.init(
 		},
 		number: {
 			type: DataTypes.STRING(4),
-			allowNull: false // TODO: definir se casos em que o endereço não tem número devem conter isso explicitamente no campo Rua
+			allowNull: true // TODO: definir se casos em que o endereço não tem número devem conter isso explicitamente no campo Rua
 		},
 		additionalInfo: {
 			type: DataTypes.STRING(256),
