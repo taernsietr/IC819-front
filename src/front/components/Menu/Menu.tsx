@@ -1,28 +1,17 @@
 import React from 'react';
-import './Menu.css'
-import { useState, useEffect } from 'react';
 import './Menu.css';
 import menuLogo from '../../assets/icons/icon.png';
 import searchSvg from '../../assets/svg/search.svg';
-import arrowSvg from '../../assets/svg/arrow.svg';
 import cartSvg from '../../assets/svg/cart.svg'
 import profileSvg from '../../assets/svg/profile.svg';
-import menuItems from './test.json'
+import DropDownMenu from '../DropDownMenus/DropDownMenu';
 
 function Menu() {
-    let menuItems = [
-        { "name": "Marmitas fit" },
-        { "name": "Massas" }
-      ];
     return (
         <div className='Menu'>
             <header className='menu'>
                 <img id='menuIcon' src={menuLogo} alt='icon'/>
-                {/* Fazer um menuDropDown com useState para renderizar os cardápios cadastrados */}
-                <button onClick={() => {}} className='menuDropDown'>
-                <p>Pratos clássicos</p> 
-                        <img src={arrowSvg} alt=''/>
-                </button>
+                <DropDownMenu/>
                 <div className='menuSearch'>
                     <img src={searchSvg} />
                     <input placeholder='Buscar cardápio ou prato...' type='text'/>   

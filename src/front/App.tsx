@@ -5,6 +5,7 @@ import './App.css';
 import Menu from './components/Menu/Menu'
 import Footer from './components/Footer/Footer'
 
+
 function App() {
   return (
     <div className="App">
@@ -41,7 +42,6 @@ function App() {
             </nav>
         </div>
 <Footer/>
-
 </div>
   );
 }
