@@ -1,0 +1,80 @@
+.LoginDiv{
+ display: flex;
+ flex-direction: row;
+ width: 100%;
+}
+
+
+.leftDiv{
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.leftDiv img{
+  width: 90%;
+}
+
+.rightDiv{
+  width: 40%;
+
+}
+
+.FlexLogin{
+  margin-left: 30%;
+  width: 100%;
+  display:flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-content: center
+}
+
+.FlexInput{
+  padding-top: 70px;
+  padding-bottom: 70px;
+  border-width: 20px;
+  width: 100%;
+  margin-bottom: 15%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+h1{
+  font-size: 35px;
+}
+
+
+.textInput{
+  margin-bottom: 2%;
+  font-size: 20px;
+  height: 50px;
+  width: 70%;
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.3);
+  text-indent: 13px;
+
+}
+
+input::placeholder{
+  font-weight: 700;
+}
+
+
+
+.submitInput{
+  margin-top: 5%;
+  height: 75px;
+  width: 205px;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  background-color: #AD1814;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3);;
+  border-radius: 5px;
+
+}
