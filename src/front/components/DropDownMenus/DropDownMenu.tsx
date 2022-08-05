@@ -6,7 +6,7 @@ import arrowSvg from '../../assets/svg/arrow.svg';
 import axios from 'axios';
 import { get } from 'https';
 
-const customAxios = axios.create({ baseURL: "http://localhost:5000/"});
+const customAxios = axios.create({ baseURL: "http://192.168.3.14:5000/"});
 
 
 
@@ -28,22 +28,25 @@ function DropDownMenu() {
                 console.log(error);
             };
         };
+
         getMenuNames();
     }); 
+
 
 
     return (
         <Dropdown >
             <Dropdown.Toggle className="dropDrownButton">
-                <p id="firstMenu">{object[0].name}</p>
+                {object[0].name}
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                {object.shift();
-                object.map((res,key) => {
-                    return(
-                        <Dropdown.Item key={key} href="/">{res.name}</Dropdown.Item>
-                    )
-                })}
+                {object
+                    .filter((index) => index.name != object[0].name)
+                    .map((res,key) => {
+                        return(
+                            <Dropdown.Item bsPrefix="" key={key} href="/">{res.name}</Dropdown.Item>
+                        )
+                    })}
             </Dropdown.Menu>
         </Dropdown>
     );

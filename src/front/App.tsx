@@ -4,33 +4,15 @@ import React from 'react';
 import './App.css';
 import Menu from './components/Menu/Menu'
 import Footer from './components/Footer/Footer'
+import ContainerMenus from './components/ContainerMenus/ContainerMenus'
 
 
 function App() {
   return (
     <div className="App">
         <Menu/>
-        
-        <body>
-            <div className="menuContainer">
-                <h1 id="menuName">Pratos classicos</h1>
-                <p id="menuDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <div className="cardDeckItem">
-                    <div className="cardItem">
-                        <img src="Antepasto de berinjela.jpg" alt=""/> 
-                        <div className="cardItemText">
-                            <p id="cardItemName">Antespasto de berinjela</p>
-                            <p id="cardItemDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <p id="cardItemWeight">(250gr)</p>
-                            <p id="cardItemPrice">R$ 10,00</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </body>
-
-        <div className="menuMobileOptionsClient">
+        <ContainerMenus/>
+            <div className="menuMobileOptionsClient">
             <nav className="cardBottom">
                 <img id="cartBottom" src="cart.svg" />
                 <p id="cardBottomText">Carrinho</p>

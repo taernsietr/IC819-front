@@ -1,3 +1,7 @@
+/* Configurações inicias */
+:root {
+    --red-color:#AD1814;
+  }
 .dropDrownButton{
     background-color: white;
     color: black;
@@ -6,4 +10,16 @@
     align-items: center;
     text-align: center;
 }
+.dropDrownButton:hover{
+    background-color: var(--red-color);
+}
+/* As duas classes abaixos são do boostrap, estou apenas desativando alguns recursos para estilizar nosso botão */
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color:var(--red-color);
+    border-color: red;
+}
 
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+    box-shadow: none;
+}
