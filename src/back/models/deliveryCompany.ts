@@ -13,9 +13,8 @@ class DeliveryCompany extends Model<InferAttributes<DeliveryCompany>, InferCreat
 DeliveryCompany.init(
 	{
 		id: {
-			type: DataType.UUID,
+			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
-			autoIncrement: true,
 			primaryKey: true
 		},
 		name: {

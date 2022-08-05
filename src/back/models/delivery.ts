@@ -15,9 +15,8 @@ class Delivery extends Model<InferAttributes<Delivery>, InferCreationAttributes<
 Delivery.init(
 	{
 		id: {
-			type: DataType.UUID,
+			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
-			autoIncrement: true,
 			primaryKey: true
 		},
 		scheduledDatetime: { 

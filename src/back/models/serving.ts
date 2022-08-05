@@ -16,9 +16,8 @@ class Serving extends Model<InferAttributes<Serving>, InferCreationAttributes<Se
 Serving.init(
 	{
 		id: {
-			type: DataType.UUID,
+			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
-			autoIncrement: true,
 			primaryKey: true
 		},
 		name: {
@@ -30,15 +29,15 @@ Serving.init(
 			allowNUll: false
 		},
 		pricePerWeight: {
-			type: DataType.FLOAT,
+			type: DataTypes.FLOAT,
 			allowNull: false
 		},
 		weight: {
-			type: DataType.FLOAT,
+			type: DataTypes.FLOAT,
 			allowNull: false
 		},
 		availableInStock: {
-			type: DataType.INTEGER.UNSIGNED,
+			type: DataTypes.INTEGER.UNSIGNED,
 			allowNull: false
 		}
 	},

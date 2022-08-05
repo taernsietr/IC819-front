@@ -12,9 +12,8 @@ class Operator extends Model<InferAttributes<Operator>, InferCreationAttributes<
 Operator.init(
 	{
 		id: {
-			type: DataType.UUID,
+			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
-			autoIncrement: true,
 			primaryKey: true
 		},
 		operatorType: {

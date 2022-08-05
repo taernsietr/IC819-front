@@ -12,9 +12,8 @@ class Order extends Model<InferAttributes<Order>, InferCreationAttributes<Order>
 Order.init(
 	{
 		id: {
-			type: DataType.UUID,
+			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
-			autoIncrement: true,
 			primaryKey: true
 		},
 		status: {

@@ -14,9 +14,8 @@ class Item extends Model<InferAttributes<Item>, InferCreationAttributes<Item>> {
 Item.init(
 	{
 		id: {
-			type: DataType.UUID,
+			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
-			autoIncrement: true,
 			primaryKey: true
 		},
 		name: {

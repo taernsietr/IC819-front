@@ -17,9 +17,8 @@ class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Clie
 Client.init(
 	{
 		id: {
-			type: DataType.UUID,
+			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
-			autoIncrement: true,
 			primaryKey: true
 		},
 		name: {
