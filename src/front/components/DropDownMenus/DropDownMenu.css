@@ -1,33 +1,9 @@
-#dropDownButton {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
+.dropDrownButton{
+    background-color: white;
     color: black;
     border: none;
-    background: none;
-    font-weight: bold;
-    font-size: 90%;
-}
-
-#arrowSvg{
-    width: 15px;
-    margin-left: 5px;
-}
-
-.dropDownDeck{
     display: flex;
-    margin-top: 4%;
-    flex-direction: column;
-    background-color: white;
-
+    align-items: center;
+    text-align: center;
 }
 
-#dropDownItem {
-    color: black;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-top: 1px solid #f5f0eb;
-    text-decoration: none;
-
-}
