@@ -1,6 +1,3 @@
-const Sequelize = require ("sequelize");
-const sequelize = new Sequelize("mariadb://root:mayana@localhost:3306/IC819");
-
 class DeliveryCompany extends Model<InferAttributes<DeliveryCompany>, InferCreationAttributes<DeliveryCompany>> {
 	declare id: string;
 	declare name: string;

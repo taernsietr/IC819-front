@@ -1,6 +1,3 @@
-const Sequelize = require ("sequelize");
-const sequelize = new Sequelize("mariadb://root:mayana@localhost:3306/IC819");
-
 class Operator extends Model<InferAttributes<Operator>, InferCreationAttributes<Operator>> {
 	declare id: string;
 	declare operatorType: string

@@ -1,6 +1,3 @@
-const Sequelize = require ("sequelize");
-const sequelize = new Sequelize("mariadb://root:mayana@localhost:3306/IC819");
-
 class Menu extends Model<InferAttributes<Menu>, InferCreationAttributes<Menu>> {
 	define id: string;
 	define description: string;

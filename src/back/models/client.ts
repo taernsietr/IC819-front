@@ -1,6 +1,3 @@
-const Sequelize = require ("sequelize");
-const sequelize = new Sequelize("mariadb://root:mayana@localhost:3306/IC819");
-
 class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Client>> {
 	declare id: string;
 	declare name: string;
