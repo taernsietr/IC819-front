@@ -7,7 +7,7 @@ import axios from 'axios';
 const customAxios = axios.create({ baseURL: "http://localhost:5000"});
 
 function DropDownMenu() {
-    const [object, setObject] = useState([ {
+    const [menu, setMenu] = useState([ {
         name: ""
         }
     ]);
@@ -17,7 +17,7 @@ function DropDownMenu() {
             try {
                 const response = await customAxios.get("/menuData");
                 if (response.data != null) {
-                    setObject(response.data);
+                    setMenu(response.data);
                 }
             } catch(error) {
                 console.log(error);
@@ -25,25 +25,24 @@ function DropDownMenu() {
         };
 
         getMenuNames();
-    }); 
+    },[menu]); 
 
     return (
         <Dropdown >
             <Dropdown.Toggle className="dropDrownButton">
-                {object[0].name}
+                {menu[0].name}
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                {object
-                    .filter((index) => index.name != object[0].name)
-                    .map((res,key) => {
+                {menu
+                    .filter((index) => index.name != menu[0].name)
+                    .map((menus,key) => {
                         return(
-                            <Dropdown.Item bsPrefix="" key={key} href="/">{res.name}</Dropdown.Item>
+                            <Dropdown.Item bsPrefix="" key={key} href="/">{menus.name}</Dropdown.Item>
                         )
                     })}
             </Dropdown.Menu>
         </Dropdown>
     );
 }
-
 
 export default DropDownMenu;
