@@ -23,7 +23,9 @@ DeliveryCompany.init(
 		fee: {
 			type: DataTypes.FLOAT,
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

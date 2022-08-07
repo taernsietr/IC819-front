@@ -1,3 +1,5 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class OrderItem extends Model<InferAttributes<OrderItem>, InferCreationAttributes<OrderItem>> {
 	declare quantity: number;
 
@@ -24,7 +26,9 @@ OrderItem.init(
 		quantity: {
 			type: DataTypes.INTEGER.UNSIGNED,
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

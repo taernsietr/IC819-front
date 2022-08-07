@@ -30,7 +30,7 @@ Address.init(
 		additionalInfo: {
 			type: DataTypes.STRING(256),
 			allowNull: true
-		}
+		},
 		district: {
 			type: DataTypes.STRING(64),
 			allowNull: false
@@ -42,7 +42,9 @@ Address.init(
 		postCode: {
 			type: DataTypes.STRING(7), // TODO: verificar tamanho
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

@@ -20,6 +20,8 @@ MenuItem.init(
 				key: id
 			}
 		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

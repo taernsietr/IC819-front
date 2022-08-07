@@ -28,6 +28,10 @@ Client.init(
 			type: DataTypes.STRING(11),
 			allowNull: false
 		},
+		email: {
+			type: DataTypes.STRING(32), // TODO: confirmar tipo e tamanho
+			allowNull: false
+		},
 		phone: {
 			type: DataTypes.STRING(11),
 			allowNull: false
@@ -37,9 +41,8 @@ Client.init(
 			allowNull: false
 		},
 		token: {
-
-			type: DataTypes.STRING(128).
-				allowNull: true
+			type: DataTypes.STRING(128),
+			allowNull: true
 		},
 		createdAt: DataTypes.DATE,
 		updatedAt: DataTypes.DATE

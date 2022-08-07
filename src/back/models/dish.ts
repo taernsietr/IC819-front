@@ -1,9 +1,9 @@
-import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 
 class Dish extends Model<InferAttributes<Dish>, InferCreationAttributes<Dish>> {
-	define value: number;
-	define weight: number;
-	define availableInStock: number;
+	declare value: number;
+	declare weight: number;
+	declare availableInStock: number;
 
 	declare createdAt: CreationOptional<Date>;
 	declare updatedAt: CreationOptional<Date>;
@@ -23,7 +23,9 @@ Dish.init(
 		availableInStock: {
 			type: DataTypes.INTEGER.UNSIGNED,
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,
