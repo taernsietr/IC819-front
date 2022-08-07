@@ -2,13 +2,9 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import './DropDownMenu.css';
-import arrowSvg from '../../assets/svg/arrow.svg';
 import axios from 'axios';
-import { get } from 'https';
 
-const customAxios = axios.create({ baseURL: "http://192.168.3.14:5000/"});
-
-
+const customAxios = axios.create({ baseURL: "http://localhost:5000"});
 
 function DropDownMenu() {
     const [object, setObject] = useState([ {
@@ -19,9 +15,8 @@ function DropDownMenu() {
     useEffect( () => {
         const getMenuNames = async () => {
             try {
-                const response = await customAxios.get("/menuItemsData");
+                const response = await customAxios.get("/menuData");
                 if (response.data != null) {
-                    console.log(response.data)
                     setObject(response.data);
                 }
             } catch(error) {
@@ -31,8 +26,6 @@ function DropDownMenu() {
 
         getMenuNames();
     }); 
-
-
 
     return (
         <Dropdown >

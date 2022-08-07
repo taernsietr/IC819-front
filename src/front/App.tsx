@@ -1,6 +1,4 @@
 import React from 'react';
-// import from './assets/icons';
-// import logo from './assets/svg/logo.svg';
 import './App.css';
 import Menu from './components/Menu/Menu'
 import Footer from './components/Footer/Footer'
