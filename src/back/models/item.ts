@@ -1,4 +1,5 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
 
 class Item extends Model<InferAttributes<Item>, InferCreationAttributes<Item>> {
 	declare id: string;

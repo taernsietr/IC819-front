@@ -1,6 +1,8 @@
-import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model, Sequelize } from "sequelize";
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class Address extends Model<InferAttributes<Address>, InferCreationAttributes<Address>> {
-	declare id: string; // TODO: verificar se é o tipo correto para armazenar um UUIDV4 em TS
+	declare id: string; // TODO: verificar se é o tipo correto para armazenar um UUIDV4 em TS | ver doc https://www.npmjs.com/package/uuidv4
 	declare street: string;
 	declare number: CreationOptional<string>;
 	declare additionalInfo: CreationOptional<string>;
@@ -47,7 +49,7 @@ Address.init(
 		updatedAt: DataTypes.DATE,
 	},
 	{
-		sequelize,
+		sequelize, 
 		tableName: "adresses"
 	}
 );

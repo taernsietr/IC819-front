@@ -1,4 +1,5 @@
 import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
 
 class ItemServing extends Model<InferAttributes<ItemServing>, InferCreationAttributes<ItemServing>> {
 
