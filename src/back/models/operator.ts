@@ -1,3 +1,5 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class Operator extends Model<InferAttributes<Operator>, InferCreationAttributes<Operator>> {
 	declare id: string;
 	declare operatorType: string

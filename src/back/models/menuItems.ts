@@ -1,3 +1,5 @@
+import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class MenuItem extends Model<InferAttributes<MenuItem>, InferCreationAttributes<MenuItem>> {
 
 }

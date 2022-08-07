@@ -1,3 +1,4 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model, Sequelize } from "sequelize";
 class Address extends Model<InferAttributes<Address>, InferCreationAttributes<Address>> {
 	declare id: string; // TODO: verificar se é o tipo correto para armazenar um UUIDV4 em TS
 	declare street: string;

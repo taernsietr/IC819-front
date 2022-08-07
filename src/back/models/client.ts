@@ -1,3 +1,5 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Client>> {
 	declare id: string;
 	declare name: string;

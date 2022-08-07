@@ -1,3 +1,5 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class Item extends Model<InferAttributes<Item>, InferCreationAttributes<Item>> {
 	define id: string;
 	define name: string;

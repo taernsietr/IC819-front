@@ -1,3 +1,5 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class Order extends Model<InferAttributes<Order>, InferCreationAttributes<Order>> {
 	declare id: string;
 	declare status: string;

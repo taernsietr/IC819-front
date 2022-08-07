@@ -1,3 +1,5 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class Menu extends Model<InferAttributes<Menu>, InferCreationAttributes<Menu>> {
 	define id: string;
 	define description: string;

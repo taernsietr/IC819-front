@@ -1,3 +1,5 @@
+import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class CustomizableDish extends Model<InferAttributes<CustomizableDish>, InferCreationAttributes<CustomizableDish>> {
 	define id: string;
 }

@@ -1,3 +1,5 @@
+import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class Dish extends Model<InferAttributes<Dish>, InferCreationAttributes<Dish>> {
 	define value: number;
 	define weight: number;

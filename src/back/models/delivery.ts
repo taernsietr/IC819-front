@@ -1,3 +1,5 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+
 class Delivery extends Model<InferAttributes<Delivery>, InferCreationAttributes<Delivery>> {
 	declare id: string;
 	declare scheduleDatetime: Date;
