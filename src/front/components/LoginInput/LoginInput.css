@@ -1,27 +1,30 @@
-.LoginDiv{
+.loginDiv
+{
  display: flex;
  flex-direction: row;
  width: 100%;
 }
 
-
-.leftDiv{
+.leftDiv
+{
   display: flex;
   background-size: contain;
   background-repeat: no-repeat;
 
 }
 
-.leftDiv img{
+.leftDiv img
+{
   width: 90%;
 }
 
-.rightDiv{
+.rightDiv
+{
   width: 40%;
-
 }
 
-.FlexLogin{
+.flexLogin
+{
   margin-left: 30%;
   width: 100%;
   display:flex;
@@ -30,7 +33,8 @@
   align-content: center
 }
 
-.FlexInput{
+.flexInput
+{
   padding-top: 70px;
   padding-bottom: 70px;
   border-width: 20px;
@@ -40,15 +44,15 @@
   align-items: center;
   flex-direction: column;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
-
 }
 
-h1{
+h1
+{
   font-size: 35px;
 }
 
-
-.textInput{
+.textInput
+{
   margin-bottom: 2%;
   font-size: 20px;
   height: 50px;
@@ -57,16 +61,15 @@ h1{
   border-width: 0;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.3);
   text-indent: 13px;
-
 }
 
-input::placeholder{
+input::placeholder
+{
   font-weight: 700;
 }
 
-
-
-.submitInput{
+.submitInput
+{
   margin-top: 5%;
   height: 75px;
   width: 205px;
@@ -76,5 +79,4 @@ input::placeholder{
   background-color: #AD1814;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3);;
   border-radius: 5px;
-
 }
