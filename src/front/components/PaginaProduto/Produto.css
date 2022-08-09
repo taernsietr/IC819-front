@@ -1,16 +1,50 @@
-.productDescription{
-  width: 35%;
-  display: block;
+.imageHeader{
+  background-image:url(./backgroundPrato.png);
+  background-size:cover;
+}
+.exitButtonDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
 
-.setQuantity{
+.exitButton{
+    width: 35px;
+    height: 35px;
+}
+
+.mainDish{
+  width: 45%;
+  margin: 5%;
+  display: flex;
+  justify-content: center ;
+}
+
+.mainDishDiv{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+
+}
+
+
+.productDescription
+{
+  width: 65%;
+  display: block;
+  margin-bottom: 4%;
+  margin-top: 4%;
+}
+
+.setQuantity
+{
   display: flex;
   align-items: center;
-  
-
+  margin-bottom: 3%;
 }
 
-.inputQuantity{
+.inputQuantity
+{
   margin-left: 6%;
   display: flex;
   align-items: center;
@@ -18,35 +52,26 @@
   border-radius: 3px;
 }
 
- button{
+button{
 background: none;
 border: none;
 background-color: none;
 font-size:x-large;
-
 }
 
 input[type="number"]{
-
 font-size:large;
 background: none;
 border: none;
 background-color: none;
-
-
-
-
 -moz-appearance: textfield; /*Firefox */
 width: 25px;
 margin: 7px;
-
 }
 
 .minus{
   margin-right:10px;
 }
-
-
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -56,12 +81,30 @@ input::-webkit-inner-spin-button {
 }
 
 ::placeholder{
-
   color: black;
   opacity: 1;
-  
 }
 
 .addCart{
-  width: 15%;
+  width: 35%;
+  position: relative;
+  
 }
+
+.cartFlex{
+
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+
+
+}
+
+hr{
+  display: flex;
+  text-align: left;
+  margin-left:0;
+  color: #797777;
+  width: 75%;
+}
+
