@@ -1,8 +1,11 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class Item extends Model<InferAttributes<Item>, InferCreationAttributes<Item>> {
-	define id: string;
-	define name: string;
-	define description: string;
-	define enabled: boolean;
+	declare id: string;
+	declare name: string;
+	declare description: string;
+	declare enabled: boolean;
 
 	declare createdAt: CreationOptional<Date>;
 	declare updatedAt: CreationOptional<Date>;
@@ -26,7 +29,9 @@ Item.init(
 		enabled: {
 			type: DataTypes.BOOLEAN,
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

@@ -1,3 +1,6 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class DeliveryCompany extends Model<InferAttributes<DeliveryCompany>, InferCreationAttributes<DeliveryCompany>> {
 	declare id: string;
 	declare name: string;
@@ -21,7 +24,9 @@ DeliveryCompany.init(
 		fee: {
 			type: DataTypes.FLOAT,
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

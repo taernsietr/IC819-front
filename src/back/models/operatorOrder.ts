@@ -1,3 +1,6 @@
+import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class OperatorOrder extends Model<InferAttributes<OperatorOrder>, InferCreationAttributes<OperatorOrder>> {
 
 }
@@ -17,7 +20,9 @@ OperatorOrder.init(
 				model: Order,
 				key: id
 			}
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

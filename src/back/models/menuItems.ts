@@ -1,3 +1,6 @@
+import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class MenuItem extends Model<InferAttributes<MenuItem>, InferCreationAttributes<MenuItem>> {
 
 }
@@ -18,6 +21,8 @@ MenuItem.init(
 				key: id
 			}
 		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

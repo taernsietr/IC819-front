@@ -1,5 +1,8 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class Address extends Model<InferAttributes<Address>, InferCreationAttributes<Address>> {
-	declare id: string; // TODO: verificar se é o tipo correto para armazenar um UUIDV4 em TS
+	declare id: string; // TODO: verificar se é o tipo correto para armazenar um UUIDV4 em TS | ver doc https://www.npmjs.com/package/uuidv4
 	declare street: string;
 	declare number: CreationOptional<string>;
 	declare additionalInfo: CreationOptional<string>;
@@ -29,7 +32,7 @@ Address.init(
 		additionalInfo: {
 			type: DataTypes.STRING(256),
 			allowNull: true
-		}
+		},
 		district: {
 			type: DataTypes.STRING(64),
 			allowNull: false
@@ -41,10 +44,12 @@ Address.init(
 		postCode: {
 			type: DataTypes.STRING(7), // TODO: verificar tamanho
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
-		sequelize,
+		sequelize, 
 		tableName: "adresses"
 	}
 );

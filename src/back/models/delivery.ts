@@ -1,6 +1,9 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class Delivery extends Model<InferAttributes<Delivery>, InferCreationAttributes<Delivery>> {
 	declare id: string;
-	declare scheduleDatetime: Date;
+	declare scheduledDatetime: Date;
 	declare timeDelivered: Date;
 	declare takeout: boolean;
 	declare distance: number;
@@ -17,21 +20,23 @@ Delivery.init(
 			primaryKey: true
 		},
 		scheduledDatetime: { 
-			type: DateTypes.DATE,
+			type: DataTypes.DATE,
 			allowNull: false
 		},
 		timeDelivered: { 
-			type: DateTypes.DATE,
+			type: DataTypes.DATE,
 			allowNull: false
 		},
 		takeout: {
-			type: DateTypes.BOOLEAN,
+			type: DataTypes.BOOLEAN,
 			allowNull: false
-		}
+		},
 		distance: {
-			type: DateTypes.FLOAT,
+			type: DataTypes.FLOAT,
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,

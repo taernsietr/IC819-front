@@ -1,10 +1,13 @@
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import sequelize from "../db";
+
 class Serving extends Model<InferAttributes<Serving>, InferCreationAttributes<Serving>> {
-	define id: string;
-	define name: string;
-	define category: string;
-	define pricePerWeight: number;
-	define weight: number;
-	define availableInStock: number;
+	declare id: string;
+	declare name: string;
+	declare category: string;
+	declare pricePerWeight: number;
+	declare weight: number;
+	declare availableInStock: number;
 
 	declare createdAt: CreationOptional<Date>;
 	declare updatedAt: CreationOptional<Date>;
@@ -19,11 +22,11 @@ Serving.init(
 		},
 		name: {
 			type: DataTypes.STRING(128),
-			allowNUll: false
+			allowNull: false
 		},
 		category: {
 			type: DataTypes.STRING(128),
-			allowNUll: false
+			allowNull: false
 		},
 		pricePerWeight: {
 			type: DataTypes.FLOAT,
@@ -36,7 +39,9 @@ Serving.init(
 		availableInStock: {
 			type: DataTypes.INTEGER.UNSIGNED,
 			allowNull: false
-		}
+		},
+		createdAt: DataTypes.DATE,
+		updatedAt: DataTypes.DATE,
 	},
 	{
 		sequelize,
