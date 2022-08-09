@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
-import iconWhite from "../../assets/icons/icon-white.png"
-import instagramSvg from "../../assets/svg/insta.svg"
+import iconWhite from "../../assets/icons/icon-white.png";
+import instagramSvg from "../../assets/svg/insta.svg";
 import facebookSvg from "../../assets/svg/facebook.svg"
 
 function Footer() {

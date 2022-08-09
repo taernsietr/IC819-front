@@ -4,12 +4,11 @@ import Menu from './components/Menu/Menu'
 import Footer from './components/Footer/Footer'
 import ContainerMenus from './components/ContainerMenus/ContainerMenus'
 
-
 function App() {
   return (
     <div className="App">
-        <Menu/>
-        <ContainerMenus/>
+      <Menu/>
+      <ContainerMenus/>
             <div className="menuMobileOptionsClient">
             <nav className="cardBottom">
                 <img id="cartBottom" src="cart.svg" />
@@ -21,8 +20,8 @@ function App() {
                 <p>Perfil</p>
             </nav>
         </div>
-<Footer/>
-</div>
+      <Footer/>
+    </div>
   );
 }
 

@@ -8,21 +8,23 @@ import DropDownMenu from '../DropDownMenus/DropDownMenu';
 
 function Menu() {
     return (
-        <div className='Menu'>
             <header className='menu'>
                 <img id='menuIcon' src={menuLogo} alt='icon'/>
                 <DropDownMenu/>
                 <div className='menuSearch'>
-                    <img src={searchSvg} />
+                    <a href=""><img src={searchSvg} /></a>
                     <input placeholder='Buscar cardápio ou prato...' type='text'/>   
                 </div>
 
                 <nav className='menuOptionsClient'>
+                    <a href="http://localhost:5000/menuItemsData">
                     <img id='cart' src={cartSvg} />
+                    </a>
+                    <a href="http://localhost:5000/menuData">
                     <img id='profile' src={profileSvg}/>
+                    </a>
                 </nav>
             </header>
-        </div>
     );
 }
 

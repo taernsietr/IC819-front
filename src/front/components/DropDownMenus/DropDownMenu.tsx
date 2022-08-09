@@ -27,17 +27,28 @@ function DropDownMenu() {
         getMenuNames();
     },[menu]); 
 
+    function changeButtonName(menuName: string): string {
+        menu[0].name = menuName;
+        return menu[0].name;
+    }
+    
     return (
-        <Dropdown >
+        <Dropdown>
+          
             <Dropdown.Toggle className="dropDrownButton">
+            <a id="dropDownButtonFirst" href={"#" + menu[0].name}>
                 {menu[0].name}
+                </a>
             </Dropdown.Toggle>
+       
             <Dropdown.Menu>
                 {menu
                     .filter((index) => index.name != menu[0].name)
                     .map((menus,key) => {
                         return(
-                            <Dropdown.Item bsPrefix="" key={key} href="/">{menus.name}</Dropdown.Item>
+                            <Dropdown.Item onClick={()=> {
+                                changeButtonName(menus.name)
+                            }} bsPrefix="" key={key} href={"#" + menus.name}>{menus.name}</Dropdown.Item>
                         )
                     })}
             </Dropdown.Menu>
