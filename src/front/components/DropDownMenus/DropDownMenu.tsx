@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const customAxios = axios.create({ baseURL: "http://localhost:5000"});
 
-function DropDownMenu() {
+const DropDownMenu = () => {
     const [menu, setMenu] = useState([ {
         name: ""
         }
@@ -27,10 +27,13 @@ function DropDownMenu() {
         getMenuNames();
     },[menu]); 
 
+/* 
+    Tentando fazer uma função que mude o atributo nome do primeiro objeto 
     function changeButtonName(menuName: string): string {
         menu[0].name = menuName;
+        console.log(menu[0].name)
         return menu[0].name;
-    }
+    } */
     
     return (
         <Dropdown>
@@ -46,9 +49,7 @@ function DropDownMenu() {
                     .filter((index) => index.name != menu[0].name)
                     .map((menus,key) => {
                         return(
-                            <Dropdown.Item onClick={()=> {
-                                changeButtonName(menus.name)
-                            }} bsPrefix="" key={key} href={"#" + menus.name}>{menus.name}</Dropdown.Item>
+                            <Dropdown.Item bsPrefix="" key={key} href={"#" + menus.name}>{menus.name}</Dropdown.Item>
                         )
                     })}
             </Dropdown.Menu>

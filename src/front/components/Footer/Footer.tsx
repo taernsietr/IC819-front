@@ -4,7 +4,7 @@ import iconWhite from "../../assets/icons/icon-white.png";
 import instagramSvg from "../../assets/svg/insta.svg";
 import facebookSvg from "../../assets/svg/facebook.svg"
 
-function Footer() {
+const Footer = () => {
 
     return (
         <div className='Footer'>

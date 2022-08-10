@@ -6,8 +6,10 @@ import { isTypeNode } from "typescript";
 
 const customAxios = axios.create({ baseURL: "http://192.168.3.14:5000/"});
 
-const ContainerMenus = () => {
 
+
+const ContainerMenus = () => {
+    const [search, setSearch] = useState("")
     const [menus, setMenus] = useState([{ 
     name: "", 
     description : "",
@@ -40,6 +42,7 @@ const getMenuItems = async () => {
         const response = await customAxios.get("/menuItemsData");
         if (response.data != null) {
             setMenus(response.data);
+            console.log(response.data);
         }
     } catch(error) {
         console.log(error);
@@ -48,14 +51,21 @@ const getMenuItems = async () => {
 
 useEffect( () => {
     getMenuItems();
-}, [menus]); 
+}, [0]); 
     
 return (
     <body>
         <div className="menuContainer">
+        <input placeholder="Enter Post Title" onChange={event => setSearch(event.target.value)} />
         {/* Estou com problemas em usar 1 map só parar acessar o objecto de "itemsData"
         Como solução provisória estou dando dois maps mas creio que nao seja o certo */}
-        {menus.map((menu, index, array) => {
+        {menus.filter(searchInput => {
+            if(search === "") {
+                return searchInput;
+            } else if (searchInput.name.toLowerCase().includes(search.toLowerCase())) {
+                return searchInput;
+            }
+        }).map((menu, index) => {
             return(
                 <div className="containerTest" id={menu.name}>
                     <h1>{menu.name}</h1>
@@ -63,7 +73,7 @@ return (
                     <div className="cardDeckItem">
                     {menu.itemsData.map((item,key) => {
                         return (
-                            <div className="cardItem">
+                            <div key={key} className="cardItem">
                                 {/* A principio é uma solução provisória para pegar as imagens do backend */}
                                 <img src={"http://192.168.3.14:5000/images/" + item.imageName} alt=""/>  
                                 <div className="cardItemText">
@@ -73,7 +83,7 @@ return (
                                     <p id="cardItemPrice">R$ {item.value}</p>  
                                 </div>  
                             </div>
-                    )})}
+                        )})}
                     </div>
                 </div>
             )})}
