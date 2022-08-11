@@ -27,7 +27,7 @@
   width: 15%;
 }
 
-.productNamePic .ProductName  {
+.productNamePic .productName  {
   margin-bottom: 12.5%;
   margin-left: 4%;
  
@@ -71,6 +71,11 @@ button{
   border-radius: 5px;
   margin-bottom: 2%;
   margin-top: 2%;
+}
+
+span{
+  color: #8E8E8E
+
 }
 
 .submitDiv{

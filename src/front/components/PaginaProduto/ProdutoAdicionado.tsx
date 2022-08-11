@@ -7,7 +7,7 @@ function ProdutoAdicionado() {
   return(
     <div className="addProductMain">
       <div className="productAddDiv" >
-        <img  width="85px" className="ImgAdd" src={ProductAdd} alt="" />
+        <img  width="85px" className="imgAdd" src={ProductAdd} alt="" />
         <h1> Produto adicionado no carrinho</h1>  
       </div>
 
@@ -26,10 +26,10 @@ function ProdutoAdicionado() {
   
     
 
-<div className="submitDiv" >
-  <button type="submit">Continuar comprando</button>
-  <button type="submit">Ir para o carrinho</button>
-</div>
+  <div className="submitDiv" >
+    <button type="submit">Continuar comprando</button>
+    <button type="submit">Ir para o carrinho</button>
+  </div>
     </div>
   );
 }
