@@ -27,7 +27,6 @@
 
 }
 
-
 .productDescription
 {
   width: 65%;
@@ -69,7 +68,8 @@ width: 25px;
 margin: 7px;
 }
 
-.minus{
+.minus
+{
   margin-right:10px;
 }
 
@@ -80,12 +80,14 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-::placeholder{
+::placeholder
+{
   color: black;
   opacity: 1;
 }
 
-.addCart{
+.addCart
+{
   width: 35%;
   position: relative;
   
@@ -97,10 +99,10 @@ input::-webkit-inner-spin-button {
   align-items: center ;
   justify-content: center;
 
-
 }
 
-hr{
+hr
+{
   display: flex;
   text-align: left;
   margin-left:0;

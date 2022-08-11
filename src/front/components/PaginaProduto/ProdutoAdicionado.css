@@ -1,0 +1,83 @@
+.productAddDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3%;
+  margin-top: 3%;
+};
+
+.productName{
+  margin-bottom: 20px;
+  z-index: 0;
+}
+
+.imgAdd{
+  width: 85px;
+  margin-right: 1.5%;
+}
+
+.productNamePic{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  margin-left: 10%;
+  
+}
+.productNamePic img{
+  width: 15%;
+}
+
+.productNamePic .ProductName  {
+  margin-bottom: 12.5%;
+  margin-left: 4%;
+ 
+}
+
+.productSelectInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;  
+}
+
+.productInfo{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  
+}
+
+.productSelectInfo{
+  position: relative;
+  right: 17.5%;
+   
+}
+
+.totalValue{
+  display: flex;    
+  margin-top: 10%;
+  position: relative;
+  right: 10%;
+  
+}
+
+button{
+  height: 55px;
+  width: 300px;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  background-color: #AD1814;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3);;
+  border-radius: 5px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.submitDiv{
+  display: flex;
+  justify-content:center
+}
+
+.submitDiv button{
+  margin-left: 2%;
+}
