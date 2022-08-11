@@ -1,6 +1,9 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
+const Order = require("./order");
+const Address = require("./address");
+
 class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Client>> {
 	declare id: string;
 	declare name: string;
@@ -14,6 +17,7 @@ class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Clie
 	declare updatedAt: CreationOptional<Date>;
 }
 
+// TODO: colocar o modelo com o nome "ClientModel" pra termos o "Client" sendo o obj com as funções
 Client.init(
 	{
 		id: {
@@ -56,3 +60,7 @@ Client.init(
 
 Client.hasMany(Order, { foreignKey: "id" });
 Client.hasOne(Address, { foreignKey: "id" });
+
+module.exports = {
+	Client
+};

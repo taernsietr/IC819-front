@@ -2,6 +2,8 @@ import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, 
 import sequelize from "../db";
 
 class OrderItem extends Model<InferAttributes<OrderItem>, InferCreationAttributes<OrderItem>> {
+	declare orderID: string;
+	declare itemID: string;
 	declare quantity: number;
 
 	declare createdAt: CreationOptional<Date>;
