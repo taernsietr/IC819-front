@@ -1,10 +1,99 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
 const Order = require("./order");
 const Address = require("./address");
 
-class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Client>> {
+type ClientType = {
+	isDataNull: (data: ClientDataType) => boolean;
+	isDataValid: (data: ClientDataType) => boolean;
+	doesUniqueDataAlreadyExists: (data: { cpf: string, email: string }) => boolean;
+	createHashPassword: (data: string) => string;
+	createUser: (data: userClientType) => null;
+	getByCpf: (cpf: string) => ClientModel;
+	getByEmail: (email: string) => ClientModel;
+}
+
+type ClientDataType = {
+	name: string,
+	cpf: string,
+	email: string,
+	phone: string,
+	password: string,
+	// TODO: ver se vamos precisar 
+	addressID: string, // TODO: ver como vamos guardar as IDs
+	token: string // TODO: ver como definir o tipo do token
+}
+
+type userClientType = {
+	name: string,
+	cpf: string,
+	email: string,
+	phone: string,
+	passwordHash: string,
+	// TODO: ver se vamos precisar 
+	addressID: string, // TODO: ver como vamos guardar as IDs
+	token: string // TODO: ver como definir o tipo do token
+}
+
+const Client: ClientType =  {
+	isDataNull: (data: ClientDataType) => {
+		let isNull = false;
+
+		// verificar se os atributos esperados são nulos
+		if (!data.name || !data.cpf || !data.email || !data.phone || !data.password || !data.token) {
+			isNull = true;
+		}
+
+		console.log(`is null = ${isNull}`);
+
+		return isNull;
+	},
+
+	isDataValid: (data: ClientDataType) => {
+		let isValid = true;
+
+		isValid = false;
+
+		// TODO: validação nome
+		// TODO: validação cpf
+		// TODO: validação email
+		// TODO: validação telefoneunknown
+		// TODO: validação senha
+		console.log(`isValid = ${isValid}`);
+		return isValid;
+	},
+
+	doesUniqueDataAlreadyExists: (data: { cpf: string; email: string; }) => {
+		let alreadyExists = false;
+
+		alreadyExists = true;
+
+		console.log(`alreadyExists = ${alreadyExists}`);
+		return alreadyExists;
+	},
+
+	createHashPassword: (data: string) => {
+		const hash = "";
+		// TODO: criar o hash da senha
+		// a senha será criptografada no frontend?? pra não enviar nenhuma senha plain text
+		// 		nas requisições?
+		return hash;
+	},
+	createUser: (data: userClientType) => {
+		// TODO: criar o usuário no BD
+		// ClientModel.create(data) ?
+
+		const user = {};
+		return null;
+	},
+
+	getByCpf: undefined,
+	getByEmail: undefined
+};
+
+class ClientModel extends Model<InferAttributes<ClientModel>, InferCreationAttributes<ClientModel>> {
 	declare id: string;
 	declare name: string;
 	declare cpf: string;
@@ -15,22 +104,10 @@ class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Clie
 
 	declare createdAt: CreationOptional<Date>;
 	declare updatedAt: CreationOptional<Date>;
-
-	static checkNull(data: Client) {
-		let isNull = false;
-
-		if (Object.keys({}).length < ) {
-			isNull = true;
-		}
-
-		console.log(`is null = ${isNull}`);
-
-		return isNull;
-	}
 }
 
 // TODO: colocar o modelo com o nome "ClientModel" pra termos o "Client" sendo o obj com as funções (quero opiniões)
-Client.init(
+ClientModel.init(
 	{
 		id: {
 			type: DataTypes.UUID,
@@ -70,7 +147,17 @@ Client.init(
 	}
 );
 
-Client.hasMany(Order, { foreignKey: "id" });
-Client.hasOne(Address, { foreignKey: "id" });
+ClientModel.hasMany(Order, { foreignKey: "id" });
+ClientModel.hasOne(Address, { foreignKey: "id" });
 
-export default Client;
+// TODO: sincronizar modelo -> await User.sync({ force: true });
+
+const C = {
+	Client,
+	ClientModel,
+};
+
+// exportar os tipos
+export type { ClientDataType, ClientType, userClientType} ;
+
+export default C;
