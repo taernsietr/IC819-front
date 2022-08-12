@@ -19,8 +19,8 @@ const Footer = () => {
                 </div>
 
                 <nav className="socialMedias">
-                    <a href=""> <img src={instagramSvg} alt=""/></a>
-                    <a href=""> <img src={facebookSvg} alt=""/></a>
+                    <a href="https://www.instagram.com/mayana_delicias_da_may/"> <img src={instagramSvg} alt=""/></a>
+                    <a href="https://www.facebook.com/deliciasdaamay/"> <img src={facebookSvg} alt=""/></a>
                 </nav>
             </footer>
         </div>
