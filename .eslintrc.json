@@ -27,10 +27,10 @@
             "tab"
         ],
         // TODO: acredito que podemos tirar essa regra (rizzo)
-        "linebreak-style": [
-            "warn",
-            "unix"
-        ],
+        // "linebreak-style": [
+        //     "warn",
+        //     "unix"
+        // ],
         "quotes": [
             "error",
             "double"

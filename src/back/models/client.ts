@@ -15,6 +15,18 @@ class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Clie
 
 	declare createdAt: CreationOptional<Date>;
 	declare updatedAt: CreationOptional<Date>;
+
+	static checkNull(data: Client) {
+		let isNull = false;
+
+		if (Object.keys({}).length < ) {
+			isNull = true;
+		}
+
+		console.log(`is null = ${isNull}`);
+
+		return isNull;
+	}
 }
 
 // TODO: colocar o modelo com o nome "ClientModel" pra termos o "Client" sendo o obj com as funções (quero opiniões)
@@ -61,6 +73,4 @@ Client.init(
 Client.hasMany(Order, { foreignKey: "id" });
 Client.hasOne(Address, { foreignKey: "id" });
 
-module.exports = {
-	Client
-};
+export default Client;
