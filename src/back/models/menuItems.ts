@@ -1,6 +1,8 @@
 import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
+const Menu = require("menu");
+const Item = require("item");
 class MenuItem extends Model<InferAttributes<MenuItem>, InferCreationAttributes<MenuItem>> {
 
 }

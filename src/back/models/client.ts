@@ -17,7 +17,7 @@ class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Clie
 	declare updatedAt: CreationOptional<Date>;
 }
 
-// TODO: colocar o modelo com o nome "ClientModel" pra termos o "Client" sendo o obj com as funções
+// TODO: colocar o modelo com o nome "ClientModel" pra termos o "Client" sendo o obj com as funções (quero opiniões)
 Client.init(
 	{
 		id: {
