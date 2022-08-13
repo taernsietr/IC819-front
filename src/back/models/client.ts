@@ -2,6 +2,9 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
+import exceptions from "../resources/exceptions";
+const { EmptyDataException, InvalidDataException } = exceptions;
+
 const Order = require("./order");
 const Address = require("./address");
 
@@ -11,8 +14,8 @@ type ClientType = {
 	doesUniqueDataAlreadyExists: (data: { cpf: string, email: string }) => boolean;
 	createHashPassword: (data: string) => string;
 	createUser: (data: userClientType) => null;
-	getByCpf: (cpf: string) => ClientModel;
-	getByEmail: (email: string) => ClientModel;
+	getByCpf: (cpf: string) => Promise<ClientModel | null>;
+	getByEmail: (email: string) => Promise<ClientModel | null>;
 }
 
 type ClientDataType = {
@@ -54,6 +57,8 @@ const Client: ClientType =  {
 	isDataValid: (data: ClientDataType) => {
 		let isValid = true;
 
+		// verificar 
+
 		isValid = false;
 
 		// TODO: validação nome
@@ -89,8 +94,53 @@ const Client: ClientType =  {
 		return null;
 	},
 
-	getByCpf: undefined,
-	getByEmail: undefined
+	getByCpf: async (cpf: string) => {
+		let userFound = null;
+
+		if (cpf && !cpf == null) {
+			cpf = cpf.trim();
+
+			// TODO: validar cpf no if
+			if (cpf) {
+				console.log("[getByCpf] cpf é válido, vai procurar"); 
+
+				userFound = await ClientModel.findOne({
+					where: { cpf: cpf }
+				});
+
+				return userFound;
+
+			} else {
+				throw InvalidDataException();
+			}
+		} else {
+			throw EmptyDataException();
+		}
+	},
+
+	getByEmail: async (email: string) => {
+		let userFound = null;
+
+		if (email && !email == null) {
+			email = email.trim();
+
+			// TODO: validar email no if
+			if (email) {
+				console.log("[getByEmail] email é válido, vai procurar"); 
+
+				userFound = await ClientModel.findOne({
+					where: { email: email }
+				});
+
+				return userFound;
+
+			} else {
+				throw InvalidDataException();
+			}
+		} else {
+			throw EmptyDataException();
+		}
+	},
 };
 
 class ClientModel extends Model<InferAttributes<ClientModel>, InferCreationAttributes<ClientModel>> {

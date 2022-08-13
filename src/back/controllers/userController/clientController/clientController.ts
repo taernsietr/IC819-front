@@ -1,13 +1,20 @@
 import C from "../../../models/client";
+const { Client } = C;
+
 import type { ClientType, ClientDataType, userClientType} from "../../../models/client";
 
+import exceptions from "../resources/exceptions";
+const { EmptyDataException, InvalidDataException } = exceptions;
+
 // descontruir o objeto C, pra n ter que acessar "C.Client.isDataNull()" por exemplo
-const { Client, ClientModel } = C;
 
 async function createClient(clientData: ClientDataType ) {
 	try {
 		// TODO: verificar se nada é nulo
-		Client.isDataNull(clientData);
+		if (Client.isDataNull(clientData)) {
+			throw 
+			
+		}
 		
 		// TODO: verificar se são válidos
 		Client.isDataValid(clientData);
