@@ -12,13 +12,16 @@ function Produto(props:any) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
       {...props}
+      
+      // show = {handleClose}
 >
 <Modal.Body>
+  
   <div className="produtoCard">
     <div className="imageHeader" >
       {/* imagem */}
-      <div className="exitButtonDiv" >
-        <img className="exitButton" src={exit} />
+      <div className="exitButtonDiv"  onClick={props.onHide} >
+        <img className="exitButton"   src={exit} />
       </div>
       <div className="mainDishDiv" >
        <img className="mainDish" src={ImageCover} />
@@ -62,6 +65,7 @@ function Produto(props:any) {
 
 function app() {
   const [modalShow, setModalShow] = React.useState(false);
+  const handleClose = () => setModalShow(false);
   return(
     <div>
       <button onClick={() => setModalShow(true)}>
