@@ -1,8 +1,11 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
+const Item = require("./item");
+
 class Menu extends Model<InferAttributes<Menu>, InferCreationAttributes<Menu>> {
 	declare id: string;
+	declare name: string;
 	declare description: string;
 	declare available: boolean;
 	declare startDateTime: Date;
@@ -18,6 +21,10 @@ Menu.init(
 			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
 			primaryKey: true
+		},
+		name: {
+			type: DataTypes.STRING(32),
+			allowNull: false
 		},
 		description: {
 			type: DataTypes.STRING(256),
@@ -43,3 +50,9 @@ Menu.init(
 		tableName: "menus"
 	}
 );
+
+Menu.belongsToMany(Item, { through: "MenuItems" }); 
+
+module.exports = {
+	Menu
+};

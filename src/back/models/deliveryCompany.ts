@@ -37,3 +37,7 @@ DeliveryCompany.init(
 );
 
 DeliveryCompany.hasMany(Delivery, { foreignKey: "id" });
+
+module.exports = {
+	DeliveryCompany
+}

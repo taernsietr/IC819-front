@@ -3,7 +3,7 @@ import sequelize from "../db";
 
 const Order = require("./order");
 const Menu = require("./menu");
-const Serving = require("./serving");
+
 class Item extends Model<InferAttributes<Item>, InferCreationAttributes<Item>> {
 	declare id: string;
 	declare name: string;
@@ -44,4 +44,7 @@ Item.init(
 
 Item.belongsToMany(Order, { through: "OrderItem" });
 Item.belongsToMany(Menu, { through: "MenuItem" });
-Item.belongsToMany(Serving, { through: "ItemServing" });
+
+module.exports = {
+	Item
+};
