@@ -1,55 +1,51 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, {useEffect,useState} from "react";
+import { useAPI } from "../../hooks/API";
 import "./ContainerMenus.css";
-import searchSvg from '../../assets/svg/search.svg';
+import CardMenu from "../CardMenu/CardMenu";
+
+  
+type Menu = {
+    name: string,
+    description : string,
+    itemsData: ItemsData[]
+}
+
+
+type ItemsData = {
+    id : number,
+    name: string,
+    imageName: string,
+    description: string,
+    enable : boolean,
+    value : number,
+    weight: number 
+}
 
 const ContainerMenus = () => {
-return (
-    <body>
+    
+    let data: Menu[] = useAPI("/menuItemsData");
+    const [menu,setMenu] = useState(data); 
+
+    useEffect(() => {
+        if(data != menu)
+            setMenu(data);
+        },
+    [data]);
+
+    return (
         <div className="menuContainer">
-
-                <div className='menuSearch'>
-                    <img src={searchSvg} />
-                    <input placeholder='Buscar prato...'  onChange={event => setSearch(event.target.value)} type='text'/>   
-                </div>
-        {/* Estou com problemas em usar 1 map só parar acessar o objecto de "itemsData"
-        Como solução provisória estou dando dois maps mas creio que nao seja o certo */}
-        {menus.map((menu, index) => {
-            return(
-
-
-
-
-                // <div id={menu.name} className="containerTest">
-                //     <h1>{menu.name}</h1>
-                //     <p id="menuDescription">{menu.description}</p>
-                //     <div className="cardDeckItem">
-                //     {/* Não sei como retirar o containerTest quando não contem um item que foi procuraddo no filtro abaixo */}
-                //     {menu.itemsData.filter(searchInput => {
-                //         if(search === "") {
-                //             return searchInput;
-                //         } else if (searchInput.name.toLowerCase().includes(search.toLowerCase())) {
-                //             return searchInput;
-                //         }
-                //     }).map((item,key) => {
-                //         return (
-                //             <div id="cardItem" key={key} className="cardItem">
-                //                 {/* A principio é uma solução provisória para pegar as imagens do backend */}
-                //                 <img src={"http://192.168.3.14:5000/images/" + item.imageName} alt=""/>  
-                //                 <div className="cardItemText">
-                //                     <p id="cardItemName">{item.name}</p>
-                //                     <p id="cardItemDescription">{item.description}</p>
-                //                     <p id="cardItemWeight">{item.weight} gr</p>
-                //                     <p id="cardItemPrice">R$ {item.value}</p>  
-                //                 </div>  
-                //             </div>
-                //         )})}
-                //     </div>
-                // </div>
-            )})}
+            {menu.map((menus) =>{
+                return (
+                <CardMenu name={menus.name} description={menus.description} itemsData={menus.itemsData}/>
+                )
+            })}
         </div>
-    </body>
     )
 }
 
 export default ContainerMenus;
+
+
+
+
+
