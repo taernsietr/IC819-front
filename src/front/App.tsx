@@ -5,6 +5,14 @@ import './App.css';
 import Menu from './components/Menu/Menu'
 import Footer from './components/Footer/Footer'
 
+// Testando sync do sequelize
+try {
+	await sequelize.sync();
+	console.log('Database synced successfully.');
+} catch (error) {
+	console.error('Could not sync database:', error);
+}
+
 function App() {
   return (
     <div className="App">
