@@ -7,22 +7,28 @@ const CardMenu = ( menu:MenuFilter) => {
     let removeP = document.getElementById("menuDescription") as HTMLElement;
     return (
 
-        <div className="cardDeckItem">
-            <div className="cardDeckItemText">
+        <div id={menu.name} className="cardDeckItem">
+            <div id="cardDeckItemText">
                 <h1 id="menuTitle">{menu.name}</h1>
                 <p id="menuDescription">{menu.description}</p>
             </div>
             {menu.itemsData.filter(searchInput => {
                 if(menu.filter === "") {
-                    const exists = document.body.contains(removeH1)
-                    console.log(exists)
+                    // let cardDeckItemText = document.getElementById("cardDeckItemText") as HTMLElement;
+                    // let menuTitle = document.createElement("h1")as HTMLElement;
+                    // const menuTitleText = document.createTextNode("aaa");
+                    // menuTitle.setAttribute("id", "menuTitle");
+                    // menuTitle.appendChild(menuTitleText);
+                    // cardDeckItemText.appendChild(menuTitle)
+                    
+                    // console.log(cardDeckItemText)
                     return searchInput;
                 } else if (searchInput.name.toLowerCase().includes(menu.filter.toLowerCase())) {
-                    if(removeH1 && removeP) {
-                        removeH1.remove()
-                        removeP.remove()
-                    }
-          
+                    // if(removeH1 && removeP) {
+                    //     removeH1.remove()
+                    //     removeP.remove()
+                    // } 
+                  
                     return searchInput;
                 }
                     

@@ -11,17 +11,20 @@ const Menu = (props: PropsEvent) => {
 
     return (
             <header className='menu'>
-                <img id='menuIcon' src={menuLogo} alt='icon'/>
+                <a href="/">
+                    <img id='menuIcon' src={menuLogo} alt='icon'/>
+                </a>
+              
                 <DropDownMenu/>
                 <div className='menuSearch'>
                     <img src={searchSvg}/>
                     <input placeholder='Buscar cardápio...'  onChange={props.changeTerm} type='text'/>   
                 </div>
                 <nav className='menuOptionsClient'>
-                    <a href="http://localhost:5000/menuItemsData">
+                    <a href="http://localhost:3000/register">
                     <img id='cart' src={cartSvg} />
                     </a>
-                    <a href="http://localhost:5000/menuData">
+                    <a href="http://localhost:3000/register">
                     <img id='profile' src={profileSvg}/>
                     </a>
                 </nav>

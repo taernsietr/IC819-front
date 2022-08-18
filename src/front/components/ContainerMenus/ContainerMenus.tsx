@@ -41,7 +41,7 @@ const ContainerMenus = (props: Props) => {
 
         {menu.map((menus) =>{
                 return (
-                <CardMenu name={menus.name} description={menus.description} itemsData={menus.itemsData} filter={props.filter}/>
+                <CardMenu  name={menus.name} description={menus.description} itemsData={menus.itemsData} filter={props.filter}/>
                 )
             })}
         </div>
