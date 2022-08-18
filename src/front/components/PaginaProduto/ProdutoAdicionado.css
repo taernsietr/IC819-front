@@ -1,3 +1,10 @@
+  /* .CartaddBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+  } */
+
 .productAddDiv{
   display: flex;
   align-items: center;
@@ -8,7 +15,7 @@
 
 .productName{
   margin-bottom: 20px;
-  z-index: 0;
+  
 }
 
 .imgAdd{
