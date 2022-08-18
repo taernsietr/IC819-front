@@ -1,6 +1,8 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
+const CustomizableDish = require("./customizableDish");
+
 export class Serving extends Model<InferAttributes<Serving>, InferCreationAttributes<Serving>> {
 	declare id: string;
 	declare name: string;
@@ -48,3 +50,9 @@ Serving.init(
 		tableName: "servings"
 	}
 );
+
+Serving.belongsToMany(CustomizableDish, { through: "ItemServing" });
+
+module.exports = {
+	Serving
+};

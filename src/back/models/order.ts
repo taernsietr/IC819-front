@@ -2,6 +2,7 @@ import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, 
 import sequelize from "../db";
 
 import { Item } from "./item";
+const Delivery = require("./delivery");
 
 export class Order extends Model<InferAttributes<Order>, InferCreationAttributes<Order>> {
 	declare id: string;
@@ -31,4 +32,5 @@ Order.init(
 	}
 );
 
+Order.belongsTo(Delivery);
 Order.belongsToMany(Item, { through: "OrderItem" });

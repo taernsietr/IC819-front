@@ -1,6 +1,8 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
+const Item = require("./item");
+
 export class CustomizableDish extends Model<InferAttributes<CustomizableDish>, InferCreationAttributes<CustomizableDish>> {
 	declare id: string;
 
@@ -24,3 +26,9 @@ CustomizableDish.init(
 		tableName: "customizableDishes"
 	}
 );
+
+CustomizableDish.hasOne(Item, { foreignKey: "id" }); 
+
+module.exports = {
+	CustomizableDish
+};

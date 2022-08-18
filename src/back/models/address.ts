@@ -53,3 +53,7 @@ Address.init(
 		tableName: "adresses"
 	}
 );
+
+module.exports = {
+	Address
+};
