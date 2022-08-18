@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Trash from "../../assets/icons/trash.png";
 import '../Carrinho/Carrinho.css'
 import cart from '../../assets/icons/Cart.png'
@@ -6,6 +6,8 @@ import imgCart from '../../assets/img/Antepasto de berinjela.jpg';
 
 
 function Carrinho(params:any) {
+  const [conter, setconter] = React.useState(0)
+
   return(
 <div>
   <div className="uperCart" >
@@ -13,14 +15,14 @@ function Carrinho(params:any) {
      <h2>Carrinho</h2>
     <div className="removeAll" >
       <img width="25px" src={Trash} alt="" />
-      <span className="removeText" >Remover todos os produtos</span>
+      <span className="removeText" >Remover todos produtos</span>
     </div>
   </div>
   <div className="cardProduto" >
     <div className="productRemove" >
       <img width="25px" src={Trash} alt="" />
       <span>REMOVER</span>
-      </div>
+      </div> 
       <div className="uperTextProduct" >
         <span className="upertTextImg" > Produto</span> 
         <span className="upertTextQuant"  >Quantidade</span>
@@ -41,9 +43,9 @@ function Carrinho(params:any) {
         </div>
 
         <div className="inputQuantity">
-           <button className="minus" > - </button>
-           <input placeholder="00" type="number" name="" id="" /> 
-            <button className="plus" > + </button>
+           <button onClick={()=> setconter( conter -1) } className="minus" > - </button>
+           <input value={conter} placeholder="00" type="number" name="" id="" /> 
+            <button onClick={()=> setconter(conter + 1)} className="plus" > + </button>
          </div>
 
         <span className="productValue" >R$ Valor</span>
@@ -102,9 +104,16 @@ function Carrinho(params:any) {
 <div className="totally" >
     <span className="leftSpan" >Total Pedido</span>
     <span className="rightSpan" >R$ Valor</span>
-  </div>
+  </div>  
   
  </div>
+
+ <div className="flexPay" >
+   <div className="cartFlex" >
+      <button className="buttonPay" >Efetuar pagamento</button>
+    </div>
+    </div>
+
     
 </div>
   );

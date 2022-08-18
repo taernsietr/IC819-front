@@ -7,12 +7,15 @@ import Menu from './components/Menu/Menu'
 import Footer from './components/Footer/Footer'
 import LoginInput from './components/LoginInput/LoginInput';
 import Produto from './components/PaginaProduto/Produto';
+import ProdutoAdicionado from './components/PaginaProduto/ProdutoAdicionado';
+import Carrinho from '../front/components/Carrinho/Carrinho';
 
 function App() {
   return (
     <div className="App">
       <Menu />
-      <Produto />
+      {/* <Produto/> */}
+      <Carrinho/>
       <Footer />
 
 

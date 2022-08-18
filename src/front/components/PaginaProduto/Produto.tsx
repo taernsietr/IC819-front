@@ -5,7 +5,13 @@ import addCart from './addCart.png';
 import  Modal  from 'react-bootstrap/Modal';
 import ImageCover from '../PaginaProduto/AntepastoCover.png';
 
+
+
 function Produto(props:any) {
+  
+  const [conter250g, setcounter250g] = React.useState(0);
+  const [conter500g, setcounter500g] = React.useState(0);
+
   return (
 
 <Modal size="lg" 
@@ -30,25 +36,25 @@ function Produto(props:any) {
 
       <h1> Nome Produto  </h1>
         <span className="productDescription" > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </span>
-      <h3> Opção congelada {/* script */}  </h3>
+      <h3> Opção congelada 250g {/* script */}  </h3>
 
        <div className="setQuantity">
           <span> R$ {/* script*/} 20,00 </span>
           <div className="inputQuantity">
-           <button className="minus" > - </button>
-           <input placeholder="0" type="number" name="" id="" /> 
-            <button className="plus" > + </button>
+           <button onClick={()=> setcounter250g(conter250g - 1) } className="minus" > - </button>
+           <input value={conter250g} placeholder="0" type="number" name="" id="" data-maxLength="99" /> 
+            <button onClick={()=> setcounter250g(conter250g +1)} className="plus" > + </button>
          </div>
   
      </div>
      <hr/>
-     <h3> Opção congelada {/* script */}  </h3>
+     <h3> Opção congelada 500g {/* script */}  </h3>
      <div className="setQuantity">
          <span> R$ {/* script*/} 20,00 </span>
          <div className="inputQuantity">
-           <button className="minus" > - </button>
-           <input  placeholder="0" type="number" name="" id="" /> 
-           <button className="plus" > + </button>
+           <button onClick={()=> setcounter500g(conter500g - 1)} className="minus" > - </button>
+           <input value={conter500g}  placeholder="0" type="number" name="" id="" /> 
+           <button onClick={()=> setcounter500g(conter500g + 1)}  className="plus" > + </button>
           </div>
     
       </div>

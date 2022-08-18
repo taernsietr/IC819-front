@@ -7,11 +7,25 @@
 
 h2{
   margin-right: 69%;
+  
+  margin-top: 3%;
+  
+}
+
+.cardProduto{
+  box-shadow: 2px -4px 5px  2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin-left: 2%;
+  margin-top: 2%;
 }
 
 .cartImage{
   width: 85px;
-  margin-left: 1%;
+  margin-left: 3%;
+  margin-right: 1%;
+  margin-top: 3%;
 }
 
 .removeAll{
@@ -20,17 +34,20 @@ h2{
   align-items:center;
   border-width: 0.5px ;
   border-style: solid;
-  width: fit-content;
+  width: 15%;
   border-radius: 5px;
-  border-color: #AD1814;
+  border-color:  #AD1814;
+  border-width: 2px;
   position: relative;
   right: 3%;
+  word-wrap: normal;
 }
 
 .removeText{
   padding-left: 10px;
   color: #AD1814;
   font-weight: 600;
+  margin: 2%;
 }
 
 .productRemove{
@@ -107,7 +124,7 @@ h2{
 {
   display: flex;  
   align-items: center;
-  margin-left: 24%;
+  margin-left: 23%;
   margin-bottom: 5%;
 }
 
@@ -179,7 +196,35 @@ input::-webkit-inner-spin-button {
   background-color: #D9D9D9; 
   margin: 1%; 
   padding: 0.4%;
+  
 }
 .totally span{
   font-weight: 600;
+}
+
+hr{
+  border: 1.2px solid black;
+  width: 97%;
+  margin-left: 2%;
+}
+
+.flexPay{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.cartFlex{
+
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+  background-color: #AD1814;
+  width: 25%;
+  border-radius: 5px;
+}
+.buttonPay{
+  color: #ffffff;
+  font-weight: 600;
+  
 }
