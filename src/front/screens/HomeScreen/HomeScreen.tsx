@@ -4,11 +4,17 @@ import Footer from "../../components/Footer/Footer";
 import ContainerMenus from "../../components/ContainerMenus/ContainerMenus";
 
 const HomeScreen = () => {
-const [term,setTerm] = useState("");
+  const [term,setTerm] = useState("");
+
+  function changeTerm(event: any) {
+      let value = event.target.value
+      setTerm(value);                                         
+    }
+    
   return (
     <div>
-      <Menu/>
-      <ContainerMenus/>
+      <Menu search={term} changeTerm={changeTerm}/>
+        <ContainerMenus filter={term} />
     </div>
   )
 }

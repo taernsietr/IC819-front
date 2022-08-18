@@ -1,6 +1,8 @@
 import React from "react";
 import {Menu, ItemsData} from '../../types/types'
 
+
+
 const CardItem = (item: ItemsData) => {
     return (
         <div id="cardItem" className="cardItem">

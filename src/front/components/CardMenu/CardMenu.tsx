@@ -1,15 +1,33 @@
 import React from "react";
 import CardItem from "../CardItem/CardItem";
-import {Menu, ItemsData} from '../../types/types'
+import {MenuFilter} from '../../types/types'
   
-
-const CardMenu = (menu:Menu) => {
+const CardMenu = ( menu:MenuFilter) => {
+    let removeH1 = document.getElementById("menuTitle") as HTMLElement;
+    let removeP = document.getElementById("menuDescription") as HTMLElement;
     return (
-        
+
         <div className="cardDeckItem">
-            <h1>{menu.name}</h1>
-            <p id="menuDescription">{menu.description}</p>
-            {menu.itemsData.map((items) => {
+            <div className="cardDeckItemText">
+                <h1 id="menuTitle">{menu.name}</h1>
+                <p id="menuDescription">{menu.description}</p>
+            </div>
+            {menu.itemsData.filter(searchInput => {
+                if(menu.filter === "") {
+                    const exists = document.body.contains(removeH1)
+                    console.log(exists)
+                    return searchInput;
+                } else if (searchInput.name.toLowerCase().includes(menu.filter.toLowerCase())) {
+                    if(removeH1 && removeP) {
+                        removeH1.remove()
+                        removeP.remove()
+                    }
+          
+                    return searchInput;
+                }
+                    
+            }).map((items) => {
+                console.log(items)
                 return (
                     <CardItem name={items.name} imageName={items.imageName} description={items.description} enable={items.enable} value={items.value} weight={items.weight}/>
                 )
@@ -19,3 +37,4 @@ const CardMenu = (menu:Menu) => {
 }
 
 export default CardMenu;
+

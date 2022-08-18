@@ -20,11 +20,13 @@ body{
 .cardDeckItem:empty{ 
     display: none;
 }
+.cardDeckItemText{
+width: 100%;
+}
 
 .menuContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
     width: 100%;
 }
 .menuContainer h1{

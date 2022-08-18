@@ -7,10 +7,9 @@ import axios from "axios";
 
 const customAxios = axios.create({ baseURL: "http://192.168.3.14:5000/"});
 
-
 const Register= () => {
   
-  const [clientData, setClientData] = useState<ClientDataType>({name:""});
+  const [clientData, setClientData] = useState<ClientDataType>();
 
   async function handleClientDataChange(event: any, nomeParametro: string) {
     let value = event.target.value

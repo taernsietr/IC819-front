@@ -4,7 +4,7 @@
   display: flex;
   width: 100%;
   background-color: white;
-  position: fixed;
+  /* position: fixed; */
   align-items: center; 
   box-shadow: var(--box-shadow);
   justify-content: space-between;

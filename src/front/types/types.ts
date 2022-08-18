@@ -13,6 +13,14 @@ export type Menu = {
     description : string,
     itemsData: ItemsData[]
 };
+
+export type MenuFilter = {
+    name: string,
+    filter: string,
+    description : string,
+    itemsData: ItemsData[]
+};
+
 export type ClientDataType = {
 	name: string,
 	cpf?: string,
@@ -22,3 +30,12 @@ export type ClientDataType = {
 	addressID?: string,
 	token?: string
 }
+
+export type PropsFilter = {
+    filter: string,
+}
+
+export type PropsEvent = {
+    search: string,
+    changeTerm: (e: React.ChangeEvent<HTMLInputElement>) => void
+  };

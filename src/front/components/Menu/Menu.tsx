@@ -5,15 +5,17 @@ import cartSvg from '../../assets/svg/cart.svg'
 import profileSvg from '../../assets/svg/profile.svg';
 import DropDownMenu from './DropDownMenus/DropDownMenu';
 import searchSvg from '../../assets/svg/search.svg';
+import {PropsEvent} from '../../types/types'
 
-const Menu = () => {
+const Menu = (props: PropsEvent) => {
+
     return (
             <header className='menu'>
                 <img id='menuIcon' src={menuLogo} alt='icon'/>
                 <DropDownMenu/>
                 <div className='menuSearch'>
                     <img src={searchSvg}/>
-                    <input placeholder='Buscar cardápio ou prato...' type='text'/>   
+                    <input placeholder='Buscar cardápio...'  onChange={props.changeTerm} type='text'/>   
                 </div>
                 <nav className='menuOptionsClient'>
                     <a href="http://localhost:5000/menuItemsData">

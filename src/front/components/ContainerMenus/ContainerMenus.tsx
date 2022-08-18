@@ -19,7 +19,11 @@ type Menu = {
     itemsData: ItemsData[]
 }
 
-const ContainerMenus = () => {
+type Props = {
+    filter: string,
+}
+
+const ContainerMenus = (props: Props) => {
     
     let data: Menu[] = useAPI("/menuItemsData");
     const [menu,setMenu] = useState(data); 
@@ -30,11 +34,14 @@ const ContainerMenus = () => {
         },
     [data]);
 
+    
+
     return (
         <div className="menuContainer">
-            {menu.map((menus) =>{
+
+        {menu.map((menus) =>{
                 return (
-                <CardMenu name={menus.name} description={menus.description} itemsData={menus.itemsData}/>
+                <CardMenu name={menus.name} description={menus.description} itemsData={menus.itemsData} filter={props.filter}/>
                 )
             })}
         </div>
