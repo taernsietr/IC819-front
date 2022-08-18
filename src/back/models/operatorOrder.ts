@@ -1,10 +1,10 @@
 import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-const Operator = require("./operator");
-const Order = require("./order");
+import { Operator } from "./operator";
+import { Order } from "./order";
 
-class OperatorOrder extends Model<InferAttributes<OperatorOrder>, InferCreationAttributes<OperatorOrder>> {
+export class OperatorOrder extends Model<InferAttributes<OperatorOrder>, InferCreationAttributes<OperatorOrder>> {
 
 }
 

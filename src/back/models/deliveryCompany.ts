@@ -1,9 +1,9 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-const Delivery = require("./delivery");
+import { Delivery } from "./delivery";
 
-class DeliveryCompany extends Model<InferAttributes<DeliveryCompany>, InferCreationAttributes<DeliveryCompany>> {
+export class DeliveryCompany extends Model<InferAttributes<DeliveryCompany>, InferCreationAttributes<DeliveryCompany>> {
 	declare id: string;
 	declare name: string;
 	declare fee: number;

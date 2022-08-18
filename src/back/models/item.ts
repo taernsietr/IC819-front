@@ -1,10 +1,10 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-const Order = require("./order");
-const Menu = require("./menu");
-const Serving = require("./serving");
-class Item extends Model<InferAttributes<Item>, InferCreationAttributes<Item>> {
+import { Order } from "./order";
+import { Menu } from "./menu";
+import { Serving } from "./serving";
+export class Item extends Model<InferAttributes<Item>, InferCreationAttributes<Item>> {
 	declare id: string;
 	declare name: string;
 	declare description: string;

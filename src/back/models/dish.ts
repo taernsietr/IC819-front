@@ -1,7 +1,7 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-class Dish extends Model<InferAttributes<Dish>, InferCreationAttributes<Dish>> {
+export class Dish extends Model<InferAttributes<Dish>, InferCreationAttributes<Dish>> {
 	declare value: number;
 	declare weight: number;
 	declare availableInStock: number;

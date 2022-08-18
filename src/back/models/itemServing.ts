@@ -1,10 +1,10 @@
 import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-const Item = require("./item");
-const Serving = require("./serving");
+import { Item } from "./item";
+import { Serving } from "./serving";
 
-class ItemServing extends Model<InferAttributes<ItemServing>, InferCreationAttributes<ItemServing>> {
+export class ItemServing extends Model<InferAttributes<ItemServing>, InferCreationAttributes<ItemServing>> {
 
 }
 

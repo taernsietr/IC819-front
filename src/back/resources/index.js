@@ -5,7 +5,6 @@ import phoneValidation from "./validations/phoneValidation";
 
 import generateAccessToken from "./validations/generateAccessToken";
 
-
 const resources = {
 	emailValidation,
 	phoneValidation,

@@ -1,7 +1,7 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-class Operator extends Model<InferAttributes<Operator>, InferCreationAttributes<Operator>> {
+export class Operator extends Model<InferAttributes<Operator>, InferCreationAttributes<Operator>> {
 	declare id: string;
 	declare operatorType: string;
 

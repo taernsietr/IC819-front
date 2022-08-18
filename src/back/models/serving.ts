@@ -1,7 +1,7 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-class Serving extends Model<InferAttributes<Serving>, InferCreationAttributes<Serving>> {
+export class Serving extends Model<InferAttributes<Serving>, InferCreationAttributes<Serving>> {
 	declare id: string;
 	declare name: string;
 	declare category: string;

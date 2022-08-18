@@ -1,10 +1,10 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-const Order = require("./order");
-const Item = require("item");
+import { Order } from "./order";
+import { Item } from "./item";
 
-class OrderItem extends Model<InferAttributes<OrderItem>, InferCreationAttributes<OrderItem>> {
+export class OrderItem extends Model<InferAttributes<OrderItem>, InferCreationAttributes<OrderItem>> {
 	declare orderID: string;
 	declare itemID: string;
 	declare quantity: number;

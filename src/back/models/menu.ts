@@ -1,7 +1,7 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-class Menu extends Model<InferAttributes<Menu>, InferCreationAttributes<Menu>> {
+export class Menu extends Model<InferAttributes<Menu>, InferCreationAttributes<Menu>> {
 	declare id: string;
 	declare description: string;
 	declare available: boolean;

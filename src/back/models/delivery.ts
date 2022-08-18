@@ -1,9 +1,9 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-const Order = require("./order");
+import { Order } from "./order";
 
-class Delivery extends Model<InferAttributes<Delivery>, InferCreationAttributes<Delivery>> {
+export class Delivery extends Model<InferAttributes<Delivery>, InferCreationAttributes<Delivery>> {
 	declare id: string;
 	declare scheduledDatetime: Date;
 	declare timeDelivered: Date;

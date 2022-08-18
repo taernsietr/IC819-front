@@ -2,50 +2,28 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-import exceptions from "../resources/exceptions";
-const { EmptyDataException, InvalidDataException } = exceptions;
+import { Order } from "./order";
+import { Address } from "./address";
 
-const Order = require("./order");
-const Address = require("./address");
-
-type ClientType = {
-	isDataNull: (data: ClientDataType) => boolean;
-	isDataValid: (data: ClientDataType) => boolean;
-	doesUniqueDataAlreadyExists: (data: { cpf: string, email: string }) => boolean;
-	createHashPassword: (data: string) => string;
-	createUser: (data: userClientType) => null;
-	getByCpf: (cpf: string) => Promise<ClientModel | null>;
-	getByEmail: (email: string) => Promise<ClientModel | null>;
-}
+// import exceptions from "../resources/exceptions";
+// const { EmptyDataException, InvalidDataException } = exceptions;
 
 type ClientDataType = {
 	name: string,
 	cpf: string,
 	email: string,
 	phone: string,
-	password: string,
-	// TODO: ver se vamos precisar 
-	addressID: string, // TODO: ver como vamos guardar as IDs
-	token: string // TODO: ver como definir o tipo do token
-}
-
-type userClientType = {
-	name: string,
-	cpf: string,
-	email: string,
-	phone: string,
 	passwordHash: string,
-	// TODO: ver se vamos precisar 
-	addressID: string, // TODO: ver como vamos guardar as IDs
-	token: string // TODO: ver como definir o tipo do token
+	addressID: string,
+	token: string
 }
 
-const Client: ClientType =  {
+export const Client = {
 	isDataNull: (data: ClientDataType) => {
 		let isNull = false;
 
 		// verificar se os atributos esperados são nulos
-		if (!data.name || !data.cpf || !data.email || !data.phone || !data.password || !data.token) {
+		if (!data.name || !data.cpf || !data.email || !data.phone || !data.passwordHash || !data.token) {
 			isNull = true;
 		}
 
@@ -86,8 +64,10 @@ const Client: ClientType =  {
 		// 		nas requisições?
 		return hash;
 	},
-	createUser: (data: userClientType) => {
+
+	createClient: (data: ClientDataType) => {
 		// TODO: criar o usuário no BD
+
 		// ClientModel.create(data) ?
 
 		const user = {};
@@ -143,7 +123,7 @@ const Client: ClientType =  {
 	},
 };
 
-class ClientModel extends Model<InferAttributes<ClientModel>, InferCreationAttributes<ClientModel>> {
+export class ClientModel extends Model<InferAttributes<ClientModel>, InferCreationAttributes<ClientModel>> {
 	declare id: string;
 	declare name: string;
 	declare cpf: string;
@@ -156,7 +136,6 @@ class ClientModel extends Model<InferAttributes<ClientModel>, InferCreationAttri
 	declare updatedAt: CreationOptional<Date>;
 }
 
-// TODO: colocar o modelo com o nome "ClientModel" pra termos o "Client" sendo o obj com as funções (quero opiniões)
 ClientModel.init(
 	{
 		id: {
@@ -200,14 +179,7 @@ ClientModel.init(
 ClientModel.hasMany(Order, { foreignKey: "id" });
 ClientModel.hasOne(Address, { foreignKey: "id" });
 
-// TODO: sincronizar modelo -> await User.sync({ force: true });
-
-const C = {
-	Client,
-	ClientModel,
-};
+// TODO: sincronizar modelo -> await ClientModel.sync({ force: true });
 
 // exportar os tipos
-export type { ClientDataType, ClientType, userClientType} ;
-
-export default C;
+export type { ClientDataType };
