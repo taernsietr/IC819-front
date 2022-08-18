@@ -7,14 +7,13 @@ import DropDownMenu from './DropDownMenus/DropDownMenu';
 import searchSvg from '../../assets/svg/search.svg';
 
 const Menu = () => {
-
     return (
             <header className='menu'>
                 <img id='menuIcon' src={menuLogo} alt='icon'/>
                 <DropDownMenu/>
                 <div className='menuSearch'>
                     <img src={searchSvg}/>
-                    {/* <input placeholder='Buscar cardápio ou prato...' value={term} onChange= {onTermChange} type='text'/>    */}
+                    <input placeholder='Buscar cardápio ou prato...' type='text'/>   
                 </div>
                 <nav className='menuOptionsClient'>
                     <a href="http://localhost:5000/menuItemsData">

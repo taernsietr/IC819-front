@@ -3,14 +3,6 @@ import { useAPI } from "../../hooks/API";
 import "./ContainerMenus.css";
 import CardMenu from "../CardMenu/CardMenu";
 
-  
-type Menu = {
-    name: string,
-    description : string,
-    itemsData: ItemsData[]
-}
-
-
 type ItemsData = {
     id : number,
     name: string,
@@ -19,6 +11,12 @@ type ItemsData = {
     enable : boolean,
     value : number,
     weight: number 
+}
+  
+type Menu = {
+    name: string,
+    description : string,
+    itemsData: ItemsData[]
 }
 
 const ContainerMenus = () => {
