@@ -1,0 +1,22 @@
+{
+  "name": "exercicios-jest",
+  "version": "1.0.0",
+  "description": "Repositório criado para as tarefas da disciplina [IC819] Projeto de Software.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taernsietr/IC819-front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taernsietr/IC819-front/issues"
+  },
+  "homepage": "https://github.com/taernsietr/IC819-front#readme",
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}
