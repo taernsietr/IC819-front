@@ -33,7 +33,3 @@ Dish.init(
 		tableName: "dishes"
 	}
 );
-
-module.exports = {
-	Dish
-};

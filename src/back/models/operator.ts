@@ -1,9 +1,9 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-export const Order = require("./order");
+import { Order } from "./order";
 
-class Operator extends Model<InferAttributes<Operator>, InferCreationAttributes<Operator>> {
+export class Operator extends Model<InferAttributes<Operator>, InferCreationAttributes<Operator>> {
 	declare id: string;
 	declare operatorType: string;
 
@@ -32,7 +32,3 @@ Operator.init(
 );
 
 Operator.hasMany(Order);
-
-module.exports = {
-	Operator
-};

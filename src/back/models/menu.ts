@@ -1,7 +1,7 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import sequelize from "../db";
 
-const Item = require("./item");
+import { Item } from "./item";
 
 export class Menu extends Model<InferAttributes<Menu>, InferCreationAttributes<Menu>> {
 	declare id: string;
@@ -52,7 +52,3 @@ Menu.init(
 );
 
 Menu.belongsToMany(Item, { through: "MenuItems" }); 
-
-module.exports = {
-	Menu
-};
