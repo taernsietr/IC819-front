@@ -9,7 +9,7 @@ import phoneNumberValidation from "./validations/phoneNumberValidation";
 import nameValidation from "./validations/nameValidation";
 
 // mensagens
-import errorMessages from "./messages/errorMessages";
+import responses from "./handlers/responses";
 
 // tipos
 import t from "./types";
@@ -29,8 +29,8 @@ export const validations = {
 	nameValidation,
 };
 
-export const messages = {
-	...errorMessages,
+export const handlers = {
+	...responses,
 };
 
 export const exceptions = {...e};

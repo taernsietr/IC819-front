@@ -1,24 +1,24 @@
+// TODO: atualizar os paths para absolutos
 import { Client, ClientModel } from "../../../models/client";
+
 import type { ClientDataType } from "../../../resources/types";
 
-import { Request, Response } from "express";
+import { handlers } from "../../../resources";
+const { 
+	duplicatedUniqueDataResponse, 
+	invalidDataResponse, 
+	successResponse,
+	createdResponse
+} = handlers;
+
+import { Response } from "express";
 
 type createClientRequestType = {
 	body: {
 		data: ClientDataType
 	}
 }
-// export interface responseType {
-// 	message?: string;
-// 	error?: string;
-// }
 
-// export type createResponseType  =  {
-// 	message?: string;
-// 	error?: "INVALID_DATA";
-// }
-
-// add req/res
 async function createClient(req: createClientRequestType, res: Response) {
 	try {
 		const { data } = req.body;
@@ -26,36 +26,43 @@ async function createClient(req: createClientRequestType, res: Response) {
 		// validar os dados
 		if (!Client.isNameValid(data?.name) || !Client.isCpfValid(data?.cpf) || !Client.isEmailValid(data?.email) || !Client.isPhoneNumberValid(data?.phone)) {
 			res.status(401).send({
-				code: "INVALID_DATA",
-				
+				code: invalidDataResponse.code,
+				message: invalidDataResponse.message,
 			});
 		}
 
+		// verificar se os dados que devem ser únicos já estão cadastrados
 		const cpfAlreadyExists = await Client.getByCpf(data.cpf);
+		const emailAlreadyExists = await Client.getByEmail(data.email);
 
-		if(cpfAlreadyExists.result instanceof ClientModel) {
-			// cpf já cadastrado
+		if (
+			(cpfAlreadyExists.code !== successResponse.code && cpfAlreadyExists.result instanceof ClientModel) || 
+			(emailAlreadyExists.code !== successResponse.code &&emailAlreadyExists.result instanceof ClientModel)) {
+			res.status(401).send({
+				code: duplicatedUniqueDataResponse.code,
+				message: duplicatedUniqueDataResponse.message,
+			});
 		}
 
 		if (!data?.passwordHash) {
+			// TODO: validação do passwordHash
 			// enviar pro front que o hash está inválido
 		}
 
+		// TODO: criar token ? (criar no cadastro ou no login?)
 
 		const newUser: ClientDataType = {
-			name: "",
-			cpf: "",
-			email: "",
-			phone: "",
-			passwordHash: "",
+			...data,
 			token: ""
 		};
 
 		// TODO: criar usuário
-		Client.createClient(newUser);
-
+		const createdClient = await Client.createClient(newUser);
+	
 		res.status(201).send({
-
+			code: createdResponse.code,
+			message: createdResponse.message,
+			result: createdClient,
 		});
 
 	} catch (e: any) {
@@ -66,7 +73,6 @@ async function createClient(req: createClientRequestType, res: Response) {
 
 const userController = {
 	createClient,
-
 };
 
 export default userController;
