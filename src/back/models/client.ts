@@ -6,7 +6,6 @@ import { Order } from "./order";
 import { Address } from "./address";
 
 import { validations, handlers } from "../resources";
-const { emptyDataResponse, invalidDataResponse, successResponse } = handlers;
 
 import type { ClientDataType, responseType } from "../resources/types";
 
@@ -102,7 +101,7 @@ export const Client = {
 		});
 
 		const res: responseType = {
-			code: successResponse.code,
+			code: handlers.successResponse.code,
 			result: createdUser,
 		};
 
@@ -118,8 +117,8 @@ export const Client = {
 
 		if (!cpf || cpf == null ) {
 			console.log("[getByCpf] cpf não existe ou é null"); 
-			res.code = emptyDataResponse.code;
-			res.message = emptyDataResponse.message;
+			res.code = handlers.emptyDataResponse.code;
+			res.message = handlers.emptyDataResponse.message;
 			return res;
 		}
 
@@ -127,8 +126,8 @@ export const Client = {
 		
 		if (!Client.isCpfValid(cpf)) {
 			console.log("[getByCpf] cpf é inválido"); 
-			res.code = invalidDataResponse.code;
-			res.message = invalidDataResponse.message;
+			res.code = handlers.invalidDataResponse.code;
+			res.message = handlers.invalidDataResponse.message;
 			return res;
 		}
 		
@@ -139,7 +138,7 @@ export const Client = {
 		});
 
 		res.result = userFound;
-		res.code = successResponse.code;
+		res.code = handlers.successResponse.code;
 		return res;
 	},
 
@@ -152,8 +151,8 @@ export const Client = {
 
 		if (!email || email == null) {
 			console.log("[getByEmail] email não existe ou é null");
-			res.code = emptyDataResponse.code;
-			res.message = emptyDataResponse.message;
+			res.code = handlers.emptyDataResponse.code;
+			res.message = handlers.emptyDataResponse.message;
 			return res;
 		}
 
@@ -161,8 +160,8 @@ export const Client = {
 
 		if (!Client.isEmailValid(email)) {
 			console.log("[getByEmail] email é inválido");
-			res.code = invalidDataResponse.code;
-			res.message = invalidDataResponse.message;
+			res.code = handlers.invalidDataResponse.code;
+			res.message = handlers.invalidDataResponse.message;
 			return res;
 		}
 
@@ -173,7 +172,7 @@ export const Client = {
 		});
 
 		res.result = userFound;
-		res.code = successResponse.code;
+		res.code = handlers.successResponse.code;
 		return res;
 	},
 };
