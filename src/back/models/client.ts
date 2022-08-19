@@ -100,6 +100,7 @@ export const Client = {
 			token: data.token
 		});
 
+		// TODO: retornar apenas res = createdUser pra tratar lá no controller
 		const res: responseType = {
 			code: handlers.successResponse.code,
 			result: createdUser,

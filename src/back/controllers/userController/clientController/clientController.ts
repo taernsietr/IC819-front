@@ -32,6 +32,10 @@ async function createClient(req: createClientRequestType, res: Response) {
 		if (
 			(cpfAlreadyExists.code !== handlers.successResponse.code && cpfAlreadyExists.result instanceof ClientModel) || 
 			(emailAlreadyExists.code !== handlers.successResponse.code && emailAlreadyExists.result instanceof ClientModel)) {
+
+			console.log(`[controller - createClient] cpfAlreadyExists = ${JSON.stringify(cpfAlreadyExists)}`);
+			console.log(`[controller - createClient] emailAlreadyExists = ${JSON.stringify(emailAlreadyExists)}`);
+			
 			res.status(401).send({
 				code: handlers.duplicatedUniqueDataResponse.code,
 				message: handlers.duplicatedUniqueDataResponse.message,
@@ -51,7 +55,9 @@ async function createClient(req: createClientRequestType, res: Response) {
 		};
 
 		const createdClient = await Client.createClient(newUser);
-	
+		
+		// TODO: result deve ser o createdClient.result
+		// TODO: tratar o createdClient pra checar o retorno
 		res.status(201).send({
 			code: handlers.createdResponse.code,
 			message: handlers.createdResponse.message,
