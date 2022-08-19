@@ -39,3 +39,8 @@ export type PropsEvent = {
     search: string,
     changeTerm: (e: React.ChangeEvent<HTMLInputElement>) => void
   };
+
+export type ItemModal = {
+    itemsData: ItemsData,
+    clickButton: React.MouseEventHandler<HTMLButtonElement>;
+}

@@ -21,25 +21,25 @@ type Menu = {
 
 export const useAPI = (url: string) => {
 
-    const [errorMessage, setErrorMessage] = useState<String>("");
-    const [menu, setMenus] = useState<Menu>([]);
+	const [errorMessage, setErrorMessage] = useState<string>("");
+	const [menu, setMenus] = useState<Menu>([]);
 
-    useEffect(() => {
-            async function getMenus () {
-                try {
-                    const response = await customAxios.get(url);
-                    if (response.data != null) {
-                        setMenus(response.data)
-                    }
-                } catch(error) {
-                    setErrorMessage("Algo não deu certo, tente novamente");
-                };
-            }
-            getMenus()
-    }, [url,setMenus]);
+	useEffect(() => {
+		async function getMenus () {
+			try {
+				const response = await customAxios.get(url);
+				if (response.data != null) {
+					setMenus(response.data);
+				}
+			} catch(error) {
+				setErrorMessage("Algo não deu certo, tente novamente");
+			}
+		}
+		getMenus();
+	}, [url,setMenus]);
 
 
-    return menu;
-}
+	return menu;
+};
 
 
