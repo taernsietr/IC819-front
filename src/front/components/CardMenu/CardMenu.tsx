@@ -1,6 +1,6 @@
 import React from "react";
 import CardItem from "../CardItem/CardItem";
-import {MenuFilter} from '../../types/types'
+import {MenuFilter} from "../../types/types"
   
 const CardMenu = ( menu:MenuFilter) => {
     let removeH1 = document.getElementById("menuTitle") as HTMLElement;

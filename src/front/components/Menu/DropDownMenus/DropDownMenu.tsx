@@ -1,8 +1,8 @@
 import React, {useEffect,useState} from "react";
-import Dropdown from 'react-bootstrap/Dropdown';
-import './DropDownMenu.css';
+import Dropdown from "react-bootstrap/Dropdown";
+import "./DropDownMenu.css";
 import { useAPI } from "../../../hooks/API";
-import {Menu} from '../../../types/types'
+import {Menu} from "../../../types/types"
 
 const DropDownMenu = () => {
     let data: Menu[] = useAPI("/menuItemsData");

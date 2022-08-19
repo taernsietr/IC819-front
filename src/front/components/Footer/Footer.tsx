@@ -1,5 +1,5 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 import iconWhite from "../../assets/icons/icon-white.png";
 import instagramSvg from "../../assets/svg/insta.svg";
 import facebookSvg from "../../assets/svg/facebook.svg"
@@ -7,7 +7,7 @@ import facebookSvg from "../../assets/svg/facebook.svg"
 const Footer = () => {
 
     return (
-        <div className='Footer'>
+        <div className="Footer">
             <footer>
                 <div id="containerImgText">
                     <img id="iconFooter" src={iconWhite} alt=""/>

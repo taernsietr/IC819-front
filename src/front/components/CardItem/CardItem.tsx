@@ -1,5 +1,5 @@
 import React from "react";
-import {Menu, ItemsData} from '../../types/types'
+import {Menu, ItemsData} from "../../types/types"
 
 
 

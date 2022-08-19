@@ -10,11 +10,15 @@
   justify-content: space-between;
   z-index: 1;
 }
+
+#menuIconLink{
+  display: flex;
+  width: fit-content;
+}
   
 #menuIcon{
-  width: 20%;
+  width: 150pxpx;
 }
-
 
 
 .menuOptionsClient{
@@ -49,13 +53,13 @@
   }
 
   #menuIcon{
-    width: 12%;
+    width: 150px;
   }   
 }
 
 @media (min-width: 1940px) {
   #menuIcon{
-    width: 8%;
+    width: 150px
   }
 }
 
@@ -68,7 +72,7 @@
 
 @media (min-width: 3100px) {
   #menuIcon{
-    width: 6%;
+    width: 150px
   }
   #cart{
     margin-right: 60%;
@@ -94,7 +98,7 @@
 
 @media (max-width: 900px) {
   #menuIcon {
-    width: 20%;
+    width: 150px;
   }
   .menuDropDown{
     display: none;
@@ -157,7 +161,7 @@
     margin-right: 5%;
   }
   #menuIcon {
-    width: 25%;
+    width: 150px;
   }
   .menuSearch img{
     width: 8%;
