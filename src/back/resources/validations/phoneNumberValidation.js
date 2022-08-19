@@ -1,6 +1,6 @@
 /* Função para validar o telefone */
 
-export default function phoneValidation(phone) {
+export default function phoneNumberValidation(phone) {
 	if (!phone || phone == "") {
 		// trocar por exception
 		return new Error({

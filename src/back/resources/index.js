@@ -1,15 +1,40 @@
+// autenticações
+import generateAccessToken from "./auth/generateAccessToken";
+import checkUserAuth from "./auth/checkUserAuth";
 
+// validações
 import cpfValidation from "./validations/cpfValidation";
 import emailValidation from "./validations/emailValidation";
-import phoneValidation from "./validations/phoneValidation";
+import phoneNumberValidation from "./validations/phoneNumberValidation";
+import nameValidation from "./validations/nameValidation";
 
-import generateAccessToken from "./validations/generateAccessToken";
+// mensagens
+import errorMessages from "./messages/errorMessages";
 
-const resources = {
-	emailValidation,
-	phoneValidation,
-	cpfValidation,
+// tipos
+import t from "./types";
+
+// exceptions
+import e from "./exceptions";
+
+export const auth = {
 	generateAccessToken,
+	...checkUserAuth,
 };
 
-export default resources;
+export const validations = {
+	emailValidation,
+	phoneNumberValidation,
+	cpfValidation,
+	nameValidation,
+};
+
+export const messages = {
+	...errorMessages,
+};
+
+export const exceptions = {...e};
+
+export const types = {
+	...t,
+};

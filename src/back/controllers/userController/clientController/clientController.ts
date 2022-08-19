@@ -1,24 +1,46 @@
-import { Client } from "../../../models/client";
+import { Client, ClientModel } from "../../../models/client";
+import type { ClientDataType } from "../../../resources/types";
 
-import type { ClientDataType} from "../../../models/client";
+import { Request, Response } from "express";
 
-import exceptions from "../../../resources/exceptions";
-const { EmptyDataException, InvalidDataException } = exceptions;
+type createClientRequestType = {
+	body: {
+		data: ClientDataType
+	}
+}
+// export interface responseType {
+// 	message?: string;
+// 	error?: string;
+// }
+
+// export type createResponseType  =  {
+// 	message?: string;
+// 	error?: "INVALID_DATA";
+// }
 
 // add req/res
-async function createClient(clientData: ClientDataType ) {
+async function createClient(req: createClientRequestType, res: Response) {
 	try {
-		// TODO: verificar se nada é nulo
-		if (Client.isDataNull(clientData)) {
-			// throw  
-			
-		}
-		
-		// TODO: verificar se são válidos
-		Client.isDataValid(clientData);
+		const { data } = req.body;
 
-		// TODO: verificar se os dados únicos não existem no bd
-		Client.doesUniqueDataAlreadyExists({ cpf: clientData.cpf, email: clientData.email });
+		// validar os dados
+		if (!Client.isNameValid(data?.name) || !Client.isCpfValid(data?.cpf) || !Client.isEmailValid(data?.email) || !Client.isPhoneNumberValid(data?.phone)) {
+			res.status(401).send({
+				code: "INVALID_DATA",
+				
+			});
+		}
+
+		const cpfAlreadyExists = await Client.getByCpf(data.cpf);
+
+		if(cpfAlreadyExists.result instanceof ClientModel) {
+			// cpf já cadastrado
+		}
+
+		if (!data?.passwordHash) {
+			// enviar pro front que o hash está inválido
+		}
+
 
 		const newUser: ClientDataType = {
 			name: "",
@@ -26,17 +48,21 @@ async function createClient(clientData: ClientDataType ) {
 			email: "",
 			phone: "",
 			passwordHash: "",
-			addressID: "",
 			token: ""
 		};
 
 		// TODO: criar usuário
 		Client.createClient(newUser);
 
-	} catch (error) {
-		// throw error;
+		res.status(201).send({
+
+		});
+
+	} catch (e: any) {
+		throw new Error(e);
 	}
 }
+
 
 const userController = {
 	createClient,

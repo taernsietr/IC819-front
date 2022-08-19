@@ -12,9 +12,6 @@ export default function cpfValidation(cpf) {
 	// retirar caracteres inválidos
 	cpf = cpf.toString().replace(/[^\d]+/g, "");
 
-	// verificar se não é nulo
-	if (!cpf || cpf === "") return false;
-
 	// verificar o tamanho e o tipo do valor
 	if (isNaN(cpf) || cpf.length != 11) return false;
 

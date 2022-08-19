@@ -5,126 +5,176 @@ import sequelize from "../db";
 import { Order } from "./order";
 import { Address } from "./address";
 
-// import exceptions from "../resources/exceptions";
-// const { EmptyDataException, InvalidDataException } = exceptions;
+import { validations} from "../resources";
 
-type ClientDataType = {
-	name: string,
-	cpf: string,
-	email: string,
-	phone: string,
-	passwordHash: string,
-	addressID: string,
-	token: string
-}
+import type { ClientDataType, responseType } from "../resources/types";
 
 export const Client = {
-	isDataNull: (data: ClientDataType) => {
-		let isNull = false;
+	isNameValid: (name: string) => {
+		// validar nome
+		if(name === null || !name) {
+			return false;
+		}
+		
+		name = name.trim();
 
-		// verificar se os atributos esperados são nulos
-		if (!data.name || !data.cpf || !data.email || !data.phone || !data.passwordHash || !data.token) {
-			isNull = true;
+		if (name === "") {
+			return false;
 		}
 
-		console.log(`is null = ${isNull}`);
+		if(!validations.nameValidation(name)) {
+			return false;
+		}
 
-		return isNull;
+		return true;
 	},
 
-	isDataValid: (data: ClientDataType) => {
-		let isValid = true;
+	isCpfValid: (cpf: string) => {
+		// validar cpf
+		if (cpf === null || !cpf) {
+			return false;
+		}
 
-		// verificar 
+		cpf = cpf.trim();
 
-		isValid = false;
+		if (cpf === "") {
+			return false;
+		}
 
-		// TODO: validação nome
-		// TODO: validação cpf
-		// TODO: validação email
-		// TODO: validação telefoneunknown
-		// TODO: validação senha
-		console.log(`isValid = ${isValid}`);
-		return isValid;
+		if (!validations.cpfValidation(cpf)) {
+			return false;
+		}
+
+		return true;
 	},
 
-	doesUniqueDataAlreadyExists: (data: { cpf: string; email: string; }) => {
-		let alreadyExists = false;
+	isEmailValid: (email: string) => {
+		// validar email
+		if (email === null || !email) {
+			return false;
+		}
 
-		alreadyExists = true;
+		email = email.trim();
 
-		console.log(`alreadyExists = ${alreadyExists}`);
-		return alreadyExists;
+		if (email === "") {
+			return false;
+		}
+
+		if (!validations.emailValidation(email)) {
+			return false;
+		}
+
+		return true;
 	},
 
-	createHashPassword: (data: string) => {
-		const hash = "";
-		// TODO: criar o hash da senha
-		// a senha será criptografada no frontend?? pra não enviar nenhuma senha plain text
-		// 		nas requisições?
-		return hash;
+	isPhoneNumberValid: (phoneNumber: string) => {
+		// validar número de telefone
+		if (phoneNumber === null || !phoneNumber) {
+			return false;
+		}
+
+		phoneNumber = phoneNumber.trim();
+
+		if (phoneNumber === "") {
+			return false;
+		}
+
+		if (!validations.phoneNumberValidation(phoneNumber)) {
+			return false;
+		}
+
+		return true;
 	},
 
-	createClient: (data: ClientDataType) => {
-		// TODO: criar o usuário no BD
+	isPasswordHashValid: (passHash: string) => {
+		// TODO: verificar se o hash é válido
+	},
 
-		// ClientModel.create(data) ?
+	createClient: async (data: ClientDataType) => {
+		const createdUser = await	ClientModel.create({
+			name: data.name,
+			cpf: data.cpf,
+			email: data.email,
+			phone: data.phone,
+			passwordHash: data.passwordHash,
+			token: data.token
+		});
 
-		const user = {};
-		return null;
+		const res: responseType = {
+			code: "OK",
+			result: createdUser,
+		};
+
+		return res;
 	},
 
 	getByCpf: async (cpf: string) => {
-		let userFound = null;
+		const res: responseType = {
+			code: "",
+			message: null,
+			result: null
+		};
 
-		if (cpf && !cpf == null) {
-			cpf = cpf.trim();
-
-			// TODO: validar cpf no if
-			if (cpf) {
-				console.log("[getByCpf] cpf é válido, vai procurar"); 
-
-				userFound = await ClientModel.findOne({
-					where: { cpf: cpf }
-				});
-
-				return userFound;
-
-			} else {
-				throw InvalidDataException();
-			}
-		} else {
-			throw EmptyDataException();
+		if (!cpf || cpf == null ) {
+			console.log("[getByCpf] cpf não existe ou é null"); 
+			res.code = "EMPTY_DATA";
+			return res;
 		}
+
+		cpf = cpf.trim();
+		
+		if (!Client.isCpfValid(cpf)) {
+			console.log("[getByCpf] cpf é inválido"); 
+			res.code = "INVALID_DATA";
+			return res;
+		}
+		
+		console.log("[getByCpf] cpf é válido, vai procurar"); 
+
+		const userFound = await ClientModel.findOne({
+			where: { cpf: cpf }
+		});
+
+		res.result = userFound;
+		res.code = "OK";
+		return res;
 	},
 
 	getByEmail: async (email: string) => {
-		let userFound = null;
+		const res: responseType = {
+			code: "",
+			message: null,
+			result: null
+		};
 
-		if (email && !email == null) {
-			email = email.trim();
-
-			// TODO: validar email no if
-			if (email) {
-				console.log("[getByEmail] email é válido, vai procurar"); 
-
-				userFound = await ClientModel.findOne({
-					where: { email: email }
-				});
-
-				return userFound;
-
-			} else {
-				throw InvalidDataException();
-			}
-		} else {
-			throw EmptyDataException();
+		if (!email || email == null) {
+			console.log("[getByEmail] email não existe ou é null");
+			res.code = "EMPTY_DATA";
+			return res;
 		}
+
+		email = email.trim();
+
+		if (!Client.isEmailValid(email)) {
+			console.log("[getByEmail] email é inválido");
+			res.code = "INVALID_DATA";
+			return res;
+		}
+
+		console.log("[getByEmail] email é válido, vai procurar");
+
+		const userFound = await ClientModel.findOne({
+			where: { email: email }
+		});
+
+		res.result = userFound;
+		res.code = "OK";
+		return res;
 	},
 };
 
 export class ClientModel extends Model<InferAttributes<ClientModel>, InferCreationAttributes<ClientModel>> {
-	declare id: string;
+	declare id: any;
 	declare name: string;
 	declare cpf: string;
 	declare email: string;
@@ -154,6 +204,7 @@ ClientModel.init(
 		email: {
 			type: DataTypes.STRING(32), // TODO: confirmar tipo e tamanho
 			allowNull: false
+			// TODO: unique
 		},
 		phone: {
 			type: DataTypes.STRING(11),
@@ -178,8 +229,6 @@ ClientModel.init(
 
 ClientModel.hasMany(Order, { foreignKey: "id" });
 ClientModel.hasOne(Address, { foreignKey: "id" });
-
-// TODO: sincronizar modelo -> await ClientModel.sync({ force: true });
 
 // exportar os tipos
 export type { ClientDataType };
