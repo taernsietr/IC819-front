@@ -4,12 +4,6 @@ import { Client, ClientModel } from "../../../models/client";
 import type { ClientDataType } from "../../../resources/types";
 
 import { handlers } from "../../../resources";
-const { 
-	duplicatedUniqueDataResponse, 
-	invalidDataResponse, 
-	successResponse,
-	createdResponse
-} = handlers;
 
 import { Response } from "express";
 
@@ -26,8 +20,8 @@ async function createClient(req: createClientRequestType, res: Response) {
 		// validar os dados
 		if (!Client.isNameValid(data?.name) || !Client.isCpfValid(data?.cpf) || !Client.isEmailValid(data?.email) || !Client.isPhoneNumberValid(data?.phone)) {
 			res.status(401).send({
-				code: invalidDataResponse.code,
-				message: invalidDataResponse.message,
+				code: handlers.invalidDataResponse.code,
+				message: handlers.invalidDataResponse.message,
 			});
 		}
 
@@ -36,11 +30,11 @@ async function createClient(req: createClientRequestType, res: Response) {
 		const emailAlreadyExists = await Client.getByEmail(data.email);
 
 		if (
-			(cpfAlreadyExists.code !== successResponse.code && cpfAlreadyExists.result instanceof ClientModel) || 
-			(emailAlreadyExists.code !== successResponse.code &&emailAlreadyExists.result instanceof ClientModel)) {
+			(cpfAlreadyExists.code !== handlers.successResponse.code && cpfAlreadyExists.result instanceof ClientModel) || 
+			(emailAlreadyExists.code !== handlers.successResponse.code && emailAlreadyExists.result instanceof ClientModel)) {
 			res.status(401).send({
-				code: duplicatedUniqueDataResponse.code,
-				message: duplicatedUniqueDataResponse.message,
+				code: handlers.duplicatedUniqueDataResponse.code,
+				message: handlers.duplicatedUniqueDataResponse.message,
 			});
 		}
 
@@ -56,12 +50,11 @@ async function createClient(req: createClientRequestType, res: Response) {
 			token: ""
 		};
 
-		// TODO: criar usuário
 		const createdClient = await Client.createClient(newUser);
 	
 		res.status(201).send({
-			code: createdResponse.code,
-			message: createdResponse.message,
+			code: handlers.createdResponse.code,
+			message: handlers.createdResponse.message,
 			result: createdClient,
 		});
 
