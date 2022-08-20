@@ -4,7 +4,7 @@
   "description": "Repositório criado para as tarefas da disciplina [IC819] Projeto de Software.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
