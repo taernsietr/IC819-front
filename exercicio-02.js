@@ -12,4 +12,4 @@ function obfuscateEmail(email) {
     return match[1].slice(0, split) + match[1].slice(split).replace(/\w/g, "*") + match[2];
 }
 
-export default obfuscateEmail;
+module.exports = obfuscateEmail;

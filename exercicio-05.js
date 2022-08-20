@@ -9,4 +9,4 @@ function hyphenate(number) {
     return number.replace(/([2,4,6,8])([2,4,6,8])/g, "$1-$2");
 }
 
-export default hyphenate;
+module.exports = hyphenate;
