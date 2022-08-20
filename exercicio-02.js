@@ -6,7 +6,7 @@ Exemplo saída: meu****@gmail.com
 */
 
 function obfuscateEmail(email) {
-    match = email.match(/(\w+)(\@\w+\.\w+)/);
+    match = email.match(/([\w\.-_]+)(\@[\w\.-_]+)/);
     split = Math.floor(match[1].length/2);
     
     return match[1].slice(0, split) + match[1].slice(split).replace(/\w/g, "*") + match[2];
