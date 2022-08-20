@@ -16,7 +16,7 @@
     "url": "https://github.com/taernsietr/IC819-front/issues"
   },
   "homepage": "https://github.com/taernsietr/IC819-front#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^28.1.3"
   }
 }
