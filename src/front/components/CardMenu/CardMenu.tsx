@@ -3,8 +3,8 @@ import CardItem from "../CardItem/CardItem";
 import {MenuFilter} from "../../types/types";
   
 const CardMenu = ( menu:MenuFilter) => {
-	const removeH1 = document.getElementById("menuTitle") as HTMLElement;
-	const removeP = document.getElementById("menuDescription") as HTMLElement;
+	// const removeH1 = document.getElementById("menuTitle") as HTMLElement;
+	// const removeP = document.getElementById("menuDescription") as HTMLElement;
 	return (
 
 		<div id={menu.name} className="cardDeckItem">

@@ -3,7 +3,7 @@
     name: string,
     imageName: string,
     description: string,
-    enable : boolean,
+    enable?: boolean,
     value : number,
     weight: number 
 };
@@ -38,9 +38,16 @@ export type PropsFilter = {
 export type PropsEvent = {
     search: string,
     changeTerm: (e: React.ChangeEvent<HTMLInputElement>) => void
-  };
+};
 
 export type ItemModal = {
-    itemsData: ItemsData,
-    clickButton: React.MouseEventHandler<HTMLButtonElement>;
-}
+    // itemsData: ItemsData,  - por algum motivo não está funcionando 
+    name: string,
+    imageName: string,
+    description: string,
+    value : number,
+    weight: number 
+    show: boolean,
+    onClick: React.MouseEventHandler<HTMLDivElement>,
+
+};

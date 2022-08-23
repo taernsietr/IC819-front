@@ -1,41 +1,41 @@
 import React from "react";
 import "./Item.css";
 import  Modal  from "react-bootstrap/Modal";
+import { ItemModal } from "../../types/types";
 
 import exit from "../../assets/icons/exit.png";
 import addCart from "../../assets/img/addCart.png";
 import ImageCover from "../../assets/img/AntepastoDeBerinjela.jpg";
 
 
-const Item = (props:any) => {
+
+const Item = (props: ItemModal) => {
+	console.log(props);
 	return (
-  
 		<Modal size="lg" 
 			aria-labelledby="contained-modal-title-vcenter"
 			centered
-			{...props}
-        
-			// show = {handleClose}
+			show = {props.show}
 		>
 			<Modal.Body>
     
 				<div className="produtoCard">
 					<div className="imageHeader" >
 						{/* imagem */}
-						<div className="exitButtonDiv"  onClick={props.onHide} >
+						<div className="exitButtonDiv"  onClick={props.onClick} >
 							<img className="exitButton"   src={exit} />
 						</div>
 						<div className="mainDishDiv" >
-							<img className="mainDish" src={ImageCover} />
+							<img className="mainDish" src={"http://192.168.3.14:5000/images/" + props.imageName} />
 						</div>
 					</div>
   
-					<h1> Nome Produto  </h1>
-					<span className="productDescription" > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </span>
-					<h3> Opção congelada {/* script */}  </h3>
+					<h1> {props.name} </h1>
+					<span className="productDescription" > {props.description}</span>
+					<h3>{props.weight}</h3>
   
 					<div className="setQuantity">
-						<span> R$ {/* script*/} 20,00 </span>
+						<span> R$ {props.value}</span>
 						<div className="inputQuantity">
 							<button className="minus" > - </button>
 							<input placeholder="0" type="number" name="" id="" /> 
@@ -43,20 +43,20 @@ const Item = (props:any) => {
 						</div>
     
 					</div>
-					<hr/>
-					<h3> Opção congelada {/* script */}  </h3>
+					{/* <hr/>
+					<h3> Opção congelada  </h3>
 					<div className="setQuantity">
-						<span> R$ {/* script*/} 20,00 </span>
+						<span> R$  20,00 </span>
 						<div className="inputQuantity">
 							<button className="minus" > - </button>
 							<input  placeholder="0" type="number" name="" id="" /> 
 							<button className="plus" > + </button>
 						</div>
       
-					</div>
+					</div> */}
   
 					<div className="cartFlex" >
-						<img className="addCart" src={addCart}/>
+						<img className="addCart" onClick={() => alert("Produto adicionado")} src={addCart}/>
 					</div>
   
 				</div>
