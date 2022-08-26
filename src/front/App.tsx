@@ -9,13 +9,15 @@ import LoginInput from './components/LoginInput/LoginInput';
 import Produto from './components/PaginaProduto/Produto';
 import ProdutoAdicionado from './components/PaginaProduto/ProdutoAdicionado';
 import Carrinho from '../front/components/Carrinho/Carrinho';
+import Checkout from '../front/components/Checkout/checkout';
 
 function App() {
   return (
     <div className="App">
       <Menu />
       {/* <Produto/> */}
-      <Carrinho/>
+      {/* <Carrinho/> */}
+      <Checkout/>
       <Footer />
 
 
