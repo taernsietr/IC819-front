@@ -135,6 +135,7 @@ h4{
   width: 55%;
   margin: 2%;
   box-shadow:  2px 8px 10px rgba(0, 0, 0, 0.3);
+  margin-left: 7%;
 }
 
 .divName{
@@ -143,18 +144,18 @@ h4{
   margin: 2%;
 }
 
-.ChangePayment img {
+.changePayment img {
   margin-left: 2%;  
   
 }
 
-.ChangePayment span {
+.changePayment span {
   margin-left: 1%;
   
   
 }
 
-.ChangeButton{
+.changeButton{
   float: right;
   color: #2277FF;
   margin-right: 2%;
@@ -164,4 +165,22 @@ h4{
   margin-top: 2.5%;
   color: rgba(0, 0, 0, 0.493);
   margin: 2%;
+}
+
+
+.paymentButtonDiv{
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+
+.paymentButton{
+  border-radius: 3px;
+  color: #D9D9D9;
+  font-weight: 800;
+  background-color: #AD1814;
+  border: none;
+  width: 20%;
+  margin-bottom: 5%;
+  padding: 5px;
 }

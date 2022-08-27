@@ -77,15 +77,19 @@ function Checkout() {
   <div className="paymentDiv" >
       <span className="divName" >Métodos de pagamento</span>
 
-    <div className="ChangePayment"  >
+    <div className="changePayment"  >
       <img width="30px" src={pixLogo} alt="" />
       <span>PIX</span>
-      <span className='ChangeButton' > Mudar Método </span>
+      <span className='changeButton' > Mudar Método </span>
     </div>
     
     <span className="methodDescription" >Pague com Pix a qualquer momento! Os pagamentos são simples, práticos e realizados em segundos. </span>
 
   </div>
+
+  <div className="paymentButtonDiv" >
+        <button className="paymentButton" >EFETUAR PAGAMENTO</button>
+    </div>
 
 </div>
 
