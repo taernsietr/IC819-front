@@ -1,6 +1,7 @@
 import React from "react";
 import checkoutImage from '../../assets/icons/checkout.png';
 import '../Checkout/checkout.css'
+import pixLogo from '../../assets/icons/Pix_logo.png';
 
 function Checkout() {
   return (
@@ -51,7 +52,7 @@ function Checkout() {
       <input type="text" placeholder="Logradouro"  name="" id="" />
       <input className="numberInput" type="text" placeholder="Número"  name="" id="" />
       </div>  
-      <input type="text" placeholder="Complmeento"  name="" id="" />
+      <input type="text" placeholder="Complemento"  name="" id="" />
       <input type="text" placeholder="Bairro"  name="" id="" />
       <input type="text" placeholder="Referência" name="" id="" />
       <input type="text" placeholder="Cidade" name="" id="" />
@@ -59,11 +60,30 @@ function Checkout() {
 
 
     <div className="cartFlex" >
-        <button className="buttonPay" >Efetuar pagamento</button>
+        <button className="buttonPay" >Calcular Frete</button>
     </div>
 
     </div>
 
+
+  </div>
+
+    <div className="prices" >
+      <span> <b> PREÇO TOTAL DO PEDIDO: R$ XX,XX </b> </span>
+      <span> <b> PREÇO TOTAL DO FRETE:  R$ XX,XX </b> </span>
+      <span className="finalPrice" ><b> PREÇO TOTAL: R$ XX,XX  </b></span>
+    </div>
+
+  <div className="paymentDiv" >
+      <span className="divName" >Métodos de pagamento</span>
+
+    <div className="ChangePayment"  >
+      <img width="30px" src={pixLogo} alt="" />
+      <span>PIX</span>
+      <span className='ChangeButton' > Mudar Método </span>
+    </div>
+    
+    <span className="methodDescription" >Pague com Pix a qualquer momento! Os pagamentos são simples, práticos e realizados em segundos. </span>
 
   </div>
 

@@ -112,3 +112,56 @@ h4{
   border: none;
   width: 35%;
 }
+
+.prices{
+    display: flex;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    width: 80%;
+    margin-left: 7%;
+}
+
+.prices span{
+  margin-left: 2%;
+}
+
+.finalPrice{
+  color: #AD1814;
+}
+
+.paymentDiv{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  margin: 2%;
+  box-shadow:  2px 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.divName{
+  color: rgba(0, 0, 0, 0.493);
+  margin-bottom: 2%;
+  margin: 2%;
+}
+
+.ChangePayment img {
+  margin-left: 2%;  
+  
+}
+
+.ChangePayment span {
+  margin-left: 1%;
+  
+  
+}
+
+.ChangeButton{
+  float: right;
+  color: #2277FF;
+  margin-right: 2%;
+}
+
+.methodDescription{
+  margin-top: 2.5%;
+  color: rgba(0, 0, 0, 0.493);
+  margin: 2%;
+}
