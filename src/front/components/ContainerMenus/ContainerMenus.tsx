@@ -1,49 +1,30 @@
 import React, {useEffect,useState} from "react";
-import { useAPI } from "../../hooks/API";
+import { getMenus } from "../../hooks/resources/getMenus";
 import "./ContainerMenus.css";
 import CardMenu from "../CardMenu/CardMenu";
-
-type ItemsData = {
-    id : number,
-    name: string,
-    imageName: string,
-    description: string,
-    enable : boolean,
-    value : number,
-    weight: number 
-}
-  
-type Menu = {
-    name: string,
-    description : string,
-    itemsData: ItemsData[]
-}
+import {Menu} from "../../types/types";
 
 type Props = {
     filter: string,
 }
 
-const ContainerMenus = (props: Props) => {
+const ContainerMenus = (props: Props): JSX.Element => {
     
-	const data: Menu[] = useAPI("/menuItemsData");
+	const data: Menu[] = getMenus("/menuItemsData");
 	const [menu,setMenu] = useState(data); 
 
 	useEffect(() => {
 		if(data != menu)
 			setMenu(data);
-	},
-	[data]);
-
-    
+	},[data]);
 
 	return (
 		<div className="menuContainer">
-
-			{menu.map((menus) =>{
-				return (
-					<CardMenu  name={menus.name} description={menus.description} itemsData={menus.itemsData} filter={props.filter}/>
-				);
-			})}
+			{menu
+				// .filter((menu) => menu.available  == true)
+				.map((menus,key) => {
+					return(<CardMenu key={key} name={menus.name} description={menus.description} itemsData={menus.itemsData} filter={props.filter}/> );})
+				}
 		</div>
 	);
 };

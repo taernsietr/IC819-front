@@ -3,7 +3,7 @@ import "./ProductAdd.css";
 import ProductAddImg from "../../assets/icons/productAdd.png";
 import DishPicture from "../../assets/img/AntepastoDeBerinjela.jpg";
 
-const ProductAdd = () => {
+const ProductAdd = (): JSX.Element => {
 	return(
 		<div className="addProductMain">
 			<div className="CartaddBody">

@@ -1,4 +1,4 @@
- export type ItemsData = {
+export interface ItemsData {
     id?: number,
     name: string,
     imageName: string,
@@ -6,22 +6,24 @@
     enable?: boolean,
     value : number,
     weight: number 
-};
+}
   
-export type Menu = {
+export interface Menu {
     name: string,
+    available?: boolean,
     description : string,
     itemsData: ItemsData[]
-};
+}
 
-export type MenuFilter = {
+export interface MenuFilter {
     name: string,
+    available?: boolean,
     filter: string,
     description : string,
     itemsData: ItemsData[]
-};
+}
 
-export type ClientDataType = {
+export interface ClientDataType {
 	name: string,
 	cpf?: string,
 	email?: string,
@@ -31,23 +33,23 @@ export type ClientDataType = {
 	token?: string
 }
 
-export type PropsFilter = {
+export interface PropsFilter {
     filter: string,
 }
 
-export type PropsEvent = {
+export interface PropsEvent {
     search: string,
     changeTerm: (e: React.ChangeEvent<HTMLInputElement>) => void
-};
+}
 
-export type ItemModal = {
-    // itemsData: ItemsData,  - por algum motivo não está funcionando 
+export interface ItemModal {
+    id?: number,
     name: string,
     imageName: string,
     description: string,
+    enable?: boolean,
     value : number,
     weight: number 
     show: boolean,
-    onClick: React.MouseEventHandler<HTMLDivElement>,
-
-};
+    onClick: React.MouseEventHandler<HTMLDivElement>
+}

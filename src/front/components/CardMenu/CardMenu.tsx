@@ -2,9 +2,7 @@ import React from "react";
 import CardItem from "../CardItem/CardItem";
 import {MenuFilter} from "../../types/types";
   
-const CardMenu = ( menu:MenuFilter) => {
-	// const removeH1 = document.getElementById("menuTitle") as HTMLElement;
-	// const removeP = document.getElementById("menuDescription") as HTMLElement;
+const CardMenu = ( menu:MenuFilter): JSX.Element  => {
 	return (
 
 		<div id={menu.name} className="cardDeckItem">
@@ -14,6 +12,7 @@ const CardMenu = ( menu:MenuFilter) => {
 			</div>
 			{menu.itemsData.filter(searchInput => {
 				if(menu.filter === "") {
+					// Testing filter search
 					// let cardDeckItemText = document.getElementById("cardDeckItemText") as HTMLElement;
 					// let menuTitle = document.createElement("h1")as HTMLElement;
 					// const menuTitleText = document.createTextNode("aaa");

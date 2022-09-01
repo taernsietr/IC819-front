@@ -1,13 +1,14 @@
 import React from "react";
 import "./Menu.css";
+import DropDownMenu from "./DropDownMenus/DropDownMenu";
+import {PropsEvent} from "../../types/types";
+
 import menuLogo from "../../assets/icons/icon.png";
 import cartSvg from "../../assets/svg/cart.svg";
 import profileSvg from "../../assets/svg/profile.svg";
-import DropDownMenu from "./DropDownMenus/DropDownMenu";
 import searchSvg from "../../assets/svg/search.svg";
-import {PropsEvent} from "../../types/types";
 
-const Menu = (props: PropsEvent) => {
+const Menu = (props: PropsEvent): JSX.Element => {
 
 	return (
 		<header className="menu">

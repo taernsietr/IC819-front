@@ -5,23 +5,15 @@ import { ItemModal } from "../../types/types";
 
 import exit from "../../assets/icons/exit.png";
 import addCart from "../../assets/img/addCart.png";
-import ImageCover from "../../assets/img/AntepastoDeBerinjela.jpg";
 
 
-
-const Item = (props: ItemModal) => {
+const Item = (props: ItemModal): JSX.Element => {
 	console.log(props);
 	return (
-		<Modal size="lg" 
-			aria-labelledby="contained-modal-title-vcenter"
-			centered
-			show = {props.show}
-		>
+		<Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show = {props.show}>
 			<Modal.Body>
-    
 				<div className="produtoCard">
 					<div className="imageHeader" >
-						{/* imagem */}
 						<div className="exitButtonDiv"  onClick={props.onClick} >
 							<img className="exitButton"   src={exit} />
 						</div>
@@ -29,7 +21,7 @@ const Item = (props: ItemModal) => {
 							<img className="mainDish" src={"http://192.168.3.14:5000/images/" + props.imageName} />
 						</div>
 					</div>
-  
+
 					<h1> {props.name} </h1>
 					<span className="productDescription" > {props.description}</span>
 					<h3>{props.weight}</h3>
