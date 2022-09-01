@@ -6,9 +6,7 @@ import { ItemModal } from "../../types/types";
 import exit from "../../assets/icons/exit.png";
 import addCart from "../../assets/img/addCart.png";
 
-
 const Item = (props: ItemModal): JSX.Element => {
-	console.log(props);
 	return (
 		<Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show = {props.show}>
 			<Modal.Body>

@@ -20,8 +20,6 @@ const Login = (): JSX.Element => {
 		doLogin(clientData);
 	}
 
-	console.log(clientData);
-
 	return (
 		<div className="loginDiv">
 			<div className="leftDiv">

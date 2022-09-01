@@ -24,9 +24,7 @@ const ProductAdd = (): JSX.Element => {
 					</div>
     
 				</div>
-  
-    
-
+				
 				<div className="submitDiv" >
 					<button className="button" type="submit">Continuar comprando</button>
 					<button className="button" type="submit">Ir para o carrinho</button>
