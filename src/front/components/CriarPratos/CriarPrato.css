@@ -78,11 +78,11 @@
 }
 
 
-.itemCardSeparation{
+/* .itemCardSeparation{
   display: flex;
   align-items: center;
-  justify-content: space-around
-}
+  justify-content:space-around
+} */
 
 .cardDishDiv{
   display: flex;
@@ -97,4 +97,35 @@
 .dishDescription{
   width: 50%;
   margin-left: 2%;
+}
+
+.buttonStatus{
+  margin-left: 6%;
+}
+
+.dishValue{
+  margin-left: 3%;
+  padding: 0.7%;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+}
+
+.dishOptions{
+  background-color: white;
+  border: none;
+  margin-left: 50%;
+}
+
+.dishOptions:hover{
+  background-color: white;
+  animation-duration: 0ms;
+}
+
+.dishOptions:focus{
+  box-shadow: none;
+}
+.btn-primary{
+  --bs-btn-hover-bg: none;
+
 }

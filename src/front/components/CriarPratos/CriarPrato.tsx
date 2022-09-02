@@ -8,10 +8,23 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import SearchIcon from '../../assets/icons/searchIcon.png';
 import moveCard from '../../assets/icons/moveCard.png';
 import dishImg from '../../assets/img/Antepasto de berinjela.jpg';
-
+import { useState } from "react";
+import { setConstantValue } from "typescript";
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import dishOptions from '../../assets/icons/dishOptions.png'
 
 function CriarPrato() {
+  const [checked, setChecked] = useState(false);
+  const [radiovalue, setRadioValue] = useState('1');
+
+  const radios = [
+    {
+      name: 'Pausar', value: '1'},
+    { name: 'Ativado', value: '2' },
+  ];
 return( 
+  
   <div> 
       <div className="topButtonSelect" >
 
@@ -56,11 +69,11 @@ return(
       </div>
 
 
-      <div className="itemCardSeparation"> 
+      {/* <div className="itemCardSeparation"> 
         <span className="item" >Item</span>
         <span className="price" > Preço</span>
         <span className="status" >Status</span>
-      </div>
+      </div> */}
       
       <div className="cardDishDiv" >
             <img width='30px' src={moveCard} alt="" />
@@ -71,14 +84,40 @@ return(
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             </span>
           </div>
-          <span>R$ XX,XX</span>
 
-          <div>
-            <button type="submit">Pausar</button>
-            <button type="submit">Ativado</button>
+          <span className="dishValue" >R$ XX,XX</span>
+
+          <div className="buttonStatus" >
+            {/* código pego da documentação do react bootstrap sobre radios Button */}
+            <ButtonGroup>    
+              {radios.map((radio,idx)=>(
+                <ToggleButton
+                key={idx}
+                id={`radio-${idx}`}
+                type="radio"
+                variant={idx % 2 ? 'outline-danger' : 'outline-danger' }
+                name="radio"
+                value={radio.value}
+                checked={radiovalue === radio.value}
+                onChange={(e)=> setRadioValue(e.currentTarget.value)}>
+                  {radio.name}
+                </ToggleButton>
+              ))}
+            </ButtonGroup>
           </div>
 
-        <img src="" alt="" srcset="" />
+          <Dropdown>
+          <Dropdown.Toggle className="dishOptions"  >
+          <img width="10px" src={dishOptions} /> 
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item>Editar</Dropdown.Item>
+            <Dropdown.Item>Remover</Dropdown.Item>
+            
+            
+          </Dropdown.Menu>
+        </Dropdown>
+        {/* */}
 
       </div>
 
