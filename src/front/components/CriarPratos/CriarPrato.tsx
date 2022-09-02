@@ -77,9 +77,9 @@ return(
       
       <div className="cardDishDiv" >
             <img width='30px' src={moveCard} alt="" />
-            <img width="105px" src={dishImg} alt="" />
+            <img width="105px" className="dishImg" src={dishImg} alt="" />
           <div className="dishDescription">
-            <h4>Nome do Produto</h4>
+            <h4>Nome do Produto - Pesog  </h4>
             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             </span>

@@ -94,6 +94,10 @@
   margin-left: 2%;
 }
 
+.dishImg{
+  border-radius: 5px;
+}
+
 .dishDescription{
   width: 50%;
   margin-left: 2%;
