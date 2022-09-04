@@ -4,6 +4,7 @@ export interface ItemsData {
     imageName: string,
     description: string,
     enable?: boolean,
+    availableInStock?: number,
     value : number,
     weight: number 
 }
@@ -49,6 +50,7 @@ export interface ItemModal {
     description: string,
     enable?: boolean,
     value : number,
+    availableInStock?: number,
     weight: number 
     show: boolean,
     onClick: React.MouseEventHandler<HTMLDivElement>
