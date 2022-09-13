@@ -8,7 +8,7 @@ import cartSvg from "../../assets/svg/cart.svg";
 import profileSvg from "../../assets/svg/profile.svg";
 import searchSvg from "../../assets/svg/search.svg";
 
-const Menu = (props: PropsEvent): JSX.Element => {
+const Menu = (props: PropsEvent) => {
 
 	return (
 		<header className="menu">

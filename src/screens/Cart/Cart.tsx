@@ -5,7 +5,7 @@ import Trash from "../../assets/icons/trash.png";
 import cart from "../../assets/icons/cart.png";
 import imgCart from "../../assets/img/AntepastoDeBerinjela.jpg";
 
-const Cart = (): JSX.Element => {
+const Cart = () => {
 	const [conter, setconter] = React.useState(0);
 	  
 	return(

@@ -3,7 +3,7 @@ import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
 import ContainerMenus from "../../components/ContainerMenus/ContainerMenus";
 
-const HomeScreen = (): JSX.Element => {
+const HomeScreen = () => {
 	const [term,setTerm] = useState("");
 
 	function changeTerm(event: any) {
@@ -12,7 +12,7 @@ const HomeScreen = (): JSX.Element => {
 	}
     
 	return (
-		<>
+		<>	
 			<Menu search={term} changeTerm={changeTerm}/>
 			<ContainerMenus filter={term} />
 			<Footer/>

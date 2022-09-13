@@ -5,7 +5,7 @@ import LoginImage from "../../assets/img/loginBackgroundImage.png";
 import {ClientDataType} from "../../types/types";  
 import { doLogin } from "../../hooks/user/doLogin";
 
-const Login = (): JSX.Element => {
+const Login = () => {
   
 	const [clientData, setClientData] = useState<ClientDataType>({name: ""});
 

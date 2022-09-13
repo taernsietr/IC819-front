@@ -5,7 +5,7 @@ import LoginImage from "../../assets/img/loginBackgroundImage.png";
 import {ClientDataType} from "../../types/types";  
 import { createClient } from "../../hooks/user/createClient";
 
-const Register= (): JSX.Element  => {
+const Register= ()  => {
   
 	const [clientData, setClientData] = useState<ClientDataType>({name: ""});
 
@@ -13,9 +13,10 @@ const Register= (): JSX.Element  => {
 		const value = event.target.value;
 		const object = Object.assign({}, clientData);
 		object[nomeParametro as keyof ClientDataType] = value;
-		setClientData(object);                                             
+		setClientData(object);
+		console.log(clientData);                                             
 	}
-
+	
 	function submitData() {
 		createClient(clientData);
 	}

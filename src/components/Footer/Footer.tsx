@@ -4,7 +4,7 @@ import iconWhite from "../../assets/icons/iconWhite.png";
 import instagramSvg from "../../assets/svg/insta.svg";
 import facebookSvg from "../../assets/svg/facebook.svg";
 
-const Footer = (): JSX.Element => {
+const Footer = () => {
 	return (
 		<div className="Footer">
 			<footer>

@@ -4,7 +4,7 @@ import "./ContainerMenus.css";
 import CardMenu from "../CardMenu/CardMenu";
 import {Menu,PropsFilter} from "../../types/types";
 
-const ContainerMenus = (props: PropsFilter): JSX.Element => {
+const ContainerMenus = (props: PropsFilter) => {
     
 	const data: Menu[] = getMenus("/menuItemsData");
 	const [menu,setMenu] = useState(data); 

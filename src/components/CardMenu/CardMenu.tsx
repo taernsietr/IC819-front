@@ -2,7 +2,7 @@ import React from "react";
 import CardItem from "../CardItem/CardItem";
 import {MenuFilter} from "../../types/types";
   
-const CardMenu = ( menu:MenuFilter): JSX.Element  => {
+const CardMenu = ( menu:MenuFilter)  => {
 	return (
 
 		<div id={menu.name} className="cardDeckItem">

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {ItemsData} from "../../types/types";
 import Item from "../Item/Item";
 
-const CardItem = (item: ItemsData): JSX.Element  => {
+const CardItem = (item: ItemsData)  => {
 	const [modalShow, setModalShow] = useState<boolean>(false);
 
 	function closeModal() {

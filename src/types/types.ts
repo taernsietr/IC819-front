@@ -1,5 +1,5 @@
 export interface ItemsData {
-    id?: number,
+    id?: string,
     name: string,
     imageName: string,
     description: string,
