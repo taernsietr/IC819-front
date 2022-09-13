@@ -26,8 +26,9 @@
             "error",
             "tab"
         ],
+        // TODO: acredito que podemos tirar essa regra (rizzo)
         // "linebreak-style": [
-        //     "error",
+        //     "warn",
         //     "unix"
         // ],
         "quotes": [
@@ -37,6 +38,7 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "@typescript-eslint/no-var-requires": "off"
     }
 }
