@@ -7,18 +7,18 @@ import { doLogin } from "../../hooks/user/doLogin";
 
 const Login = () => {
   
-	const [clientData, setClientData] = useState<ClientDataType>({name: ""});
+	const [clientData, setClientData] = useState<ClientDataType | null>(null);
 
-	async function handleClientDataChange(event: any, nomeParametro: string) {
-		const value = event.target.value;
-		const object = Object.assign({}, clientData);
-		object[nomeParametro as keyof ClientDataType] = value;
-		setClientData(object);                                             
-	}
+	// async function handleClientDataChange(event: any, nomeParametro: string) {
+	// 	const value = event.target.value;
+	// 	const object = Object.assign({}, clientData);
+	// 	object[nomeParametro as keyof ClientDataType] = value;
+	// 	setClientData(object);                                             
+	// }
 
-	function submitData() {
-		doLogin(clientData);
-	}
+	// function submitData() {
+	// 	doLogin(clientData);
+	// }
 
 	return (
 		<div className="loginDiv">
@@ -30,9 +30,9 @@ const Login = () => {
 					<img src={logoIcon} />
 					<div className="flexInput">
 						<h1>Informe os dados abaixo</h1>
-						<input className="textInput" type="text" name="" id="" placeholder="Nome" onChange={event => {handleClientDataChange(event,"name");}}/>
+						{/* <input className="textInput" type="text" name="" id="" placeholder="Nome" onChange={event => {handleClientDataChange(event,"name");}}/>
 						<input className="textInput" type="text" name="" id="" placeholder="Senha" onChange={event => {handleClientDataChange(event,"passworHash");}}/>
-						<button className="submitInput" type="submit" onClick={submitData}>Entrar</button>
+						<button className="submitInput" type="submit" onClick={submitData}>Entrar</button> */}
 					</div>
 				</div>
 			</div>

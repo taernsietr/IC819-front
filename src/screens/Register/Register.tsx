@@ -7,7 +7,7 @@ import { createClient } from "../../hooks/user/createClient";
 
 const Register= ()  => {
   
-	const [clientData, setClientData] = useState<ClientDataType>({name: ""});
+	const [clientData, setClientData] = useState<ClientDataType>({name: "", cpf: "", email: "", phone: "", passwordHash: ""});
 
 	function handleClientDataChange(event: any, nomeParametro: string) {
 		const value = event.target.value;
@@ -40,7 +40,7 @@ const Register= ()  => {
 						<input className="textInput" type="text" name="" id="" placeholder="E-mail" onChange={event => {handleClientDataChange(event,"email");}}/>
 						<input className="textInput" type="text" name="" id="" placeholder="Número" onChange={event => {handleClientDataChange(event,"phone");}}/>
 						<input className="textInput" type="text" name="" id="" placeholder="Senha" onChange={event => {handleClientDataChange(event,"passworHash");}}/>
-						<input className="textInput" type="text" name="" id="" placeholder="Confirme sua Senha"/>
+						{/* <input className="textInput" type="text" name="" id="" placeholder="Confirme sua Senha"/> */}
 						<button className="submitInput" onClick={submitData}>Cadastrar</button>
 					</div>
 				</div>

@@ -26,10 +26,10 @@ export interface MenuFilter {
 
 export interface ClientDataType {
 	name: string,
-	cpf?: string,
-	email?: string,
-	phone?: string,
-	passwordHash?: string,
+	cpf: string,
+	email: string,
+	phone: string,
+	passwordHash: string,
 	addressID?: string,
 	token?: string
 }
