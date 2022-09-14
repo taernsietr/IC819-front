@@ -5,11 +5,9 @@ import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import ProductAdd from "./screens/ProductAdd/ProductAdd";
 import Register from "./screens/Register/Register";
 import Login from "./screens/Login/Login";
-import {CartProvider} from "react-use-cart";
 
 const App = () => {
 	return (
-		<CartProvider>
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<HomeScreen/>}/>
@@ -19,7 +17,6 @@ const App = () => {
 				<Route path="/productAdd" element={<ProductAdd/>}/>
 			</Routes>
 		</BrowserRouter>
-		</CartProvider>
 	);
 };
 

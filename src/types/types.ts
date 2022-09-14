@@ -34,6 +34,15 @@ export interface ClientDataType {
 	token?: string
 }
 
+export interface ClientDataInput {
+	name: boolean,
+	cpf: boolean,
+	email: boolean,
+	phone: boolean,
+	passwordHash: boolean
+}
+
+
 export interface PropsFilter {
     filter: string,
 }
