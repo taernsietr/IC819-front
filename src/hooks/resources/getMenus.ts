@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {Menu} from "../../types/types";
 
-const customAxios = axios.create({ baseURL: "http://192.168.3.14:5000/"});
+const customAxios = axios.create({ baseURL: "http://localhost:8080/"});
 
 export const getMenus = (url: string) => {
  

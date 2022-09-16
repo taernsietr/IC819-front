@@ -26,13 +26,22 @@ export interface MenuFilter {
 
 export interface ClientDataType {
 	name: string,
-	cpf?: string,
-	email?: string,
-	phone?: string,
-	passwordHash?: string,
+	cpf: string,
+	email: string,
+	phone: string,
+	passwordHash: string,
 	addressID?: string,
 	token?: string
 }
+
+export interface ClientDataInput {
+	name: boolean,
+	cpf: boolean,
+	email: boolean,
+	phone: boolean,
+	passwordHash: boolean
+}
+
 
 export interface PropsFilter {
     filter: string,

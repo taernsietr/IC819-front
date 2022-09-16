@@ -13,7 +13,7 @@ const CardItem = (item: ItemsData)  => {
 		<>
 			<div id="cardItem" className="cardItem">
 				<button onClick={() => setModalShow(true)}>	 
-					<img src={"http://192.168.3.14:5000/images/" + item.imageName} alt=""/>  
+					<img src={"http://localhost:8080/images/" + item.imageName} alt=""/>  
 					<div className="cardItemText">
 						<p id="cardItemName">{item.name}</p>
 						<p id="cardItemDescription">{item.description}</p>

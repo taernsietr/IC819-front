@@ -6,7 +6,7 @@ import {Menu,PropsFilter} from "../../types/types";
 
 const ContainerMenus = (props: PropsFilter) => {
     
-	const data: Menu[] = getMenus("/menuItemsData");
+	const data: Menu[] = getMenus("/menu/items");
 	const [menu,setMenu] = useState(data); 
 
 	useEffect(() => {

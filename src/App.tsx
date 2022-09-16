@@ -11,7 +11,6 @@ import CriarPrato from "./screens/CriarPratos/CriarPrato";
 
 const App = () => {
 	return (
-		<CartProvider>
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<HomeScreen/>}/>
@@ -23,7 +22,6 @@ const App = () => {
 				<Route path="/createItem" element={<CriarPrato/>}/>
 			</Routes>
 		</BrowserRouter>
-		</CartProvider>
 	);
 };
 
