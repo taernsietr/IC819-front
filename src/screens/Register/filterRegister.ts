@@ -35,7 +35,7 @@ export const filterInput = (clientData: ClientDataType) => {
     }
 
 	function filterLength(field:any): boolean{ 
-        if(field.length > 10) {
+        if(field.length > 100) {
             return true;
         } else return false;
     }

@@ -18,7 +18,7 @@ const Item = (props: ItemModal) => {
 								<img className="exitButton"   src={exit} />
 							</div>
 							<div className="mainDishDiv" >
-								<img className="mainDish" src={"http://192.168.3.14:5000/images/" + props.imageName} />
+								<img className="mainDish" src={"http://localhost:8080/images/" + props.imageName} />
 							</div>
 						</div>
 

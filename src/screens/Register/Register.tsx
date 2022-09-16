@@ -23,14 +23,14 @@ const Register= ()  => {
 	  };
 
 	function InputError() {
-		let filter = filterInput(clientData);
+		const filter = filterInput(clientData);
 		return (
 			<div>
-				<p>{filter.name ? "name tem mais de 10 caracteres" : "Agora ta safe"}</p>
-				<p>{filter.cpf ? "cpf tem mais de 10 caracteres" : "Agora ta safe"}</p>
-				<p>{filter.email ? "email tem mais de 10 caracteres" : "Agora ta safe"}</p>
-				<p>{filter.phone ? "phone tem mais de 10 caracteres" : "Agora ta safe"}</p>
-				<p>{filter.passwordHash ? "passwordHash tem mais de 10 caracteres" : "Agora ta safe"}</p>
+				<p>{filter.name ? "name tem mais de 100 caracteres" : "O campo Nome não excedeu o limite de caracteres"}</p>
+				<p>{filter.cpf ? "cpf tem mais de 100 caracteres" : "O campo CPF não excedeu o limite de caracteres"}</p>
+				<p>{filter.email ? "email tem mais de 100 caracteres" : "O campo e-mail não excedeu o limite de caracteres"}</p>
+				<p>{filter.phone ? "phone tem mais de 100 caracteres" : "O campo número de telefone não excedeu o limite de caracteres"}</p>
+				<p>{filter.passwordHash ? "passwordHash tem mais de 100 caracteres" : "O campo senha não excedeu o limite de caracteres"}</p>
 			</div>
 		);
 	}
@@ -40,31 +40,28 @@ const Register= ()  => {
 	// }
 
 	return (
-		// <div className="loginDiv">
+	// <div className="loginDiv">
 
-		// 	<div className="leftDiv">
-		// 		<img src={LoginImage} />
-		// 	</div>
+	// 	<div className="leftDiv">
+	// 		<img src={LoginImage} />
+	// 	</div>
 
-		// 	<div className="rightDiv">
+	// 	<div className="rightDiv">
 
-		// 		<div className="flexLogin">
-		// 			<img src={logoIcon} />
 
-					<div className="flexInput">
-						<h1>Informe os dados abaixo</h1>
-						<input className="textInput" type="text" name="" id="" placeholder="Nome" onChange={event => {handleClientDataChange(event,"name");}}/>
-						<input className="textInput" type="text" name="" id="" placeholder="CPF" onChange={event => {handleClientDataChange(event,"cpf");}} />
-						<input className="textInput" type="text" name="" id="" placeholder="E-mail" onChange={event => {handleClientDataChange(event,"email");}}/>
-						<input className="textInput" type="text" name="" id="" placeholder="Número" onChange={event => {handleClientDataChange(event,"phone");}}/>
-						<input className="textInput" type="text" name="" id="" placeholder="Senha" onChange={event => {handleClientDataChange(event,"passwordHash");}}/>
-						{/* <input className="textInput" type="text" name="" id="" placeholder="Confirme sua Senha"/> */}
-						<button className="submitInput" onClick={verifyInput}>Cadastrar</button>
-						{error && <InputError/>}
-					</div>
-			// 	</div>
-			// </div>
-//		</div >
+			<div className="flexInput">
+				<h1>Informe os dados abaixo</h1>
+				<input className="textInput" type="text" name="" id="" placeholder="Nome" onChange={event => {handleClientDataChange(event,"name");}}/>
+				<input className="textInput" type="text" name="" id="" placeholder="CPF" onChange={event => {handleClientDataChange(event,"cpf");}} />
+				<input className="textInput" type="text" name="" id="" placeholder="E-mail" onChange={event => {handleClientDataChange(event,"email");}}/>
+				<input className="textInput" type="text" name="" id="" placeholder="Número" onChange={event => {handleClientDataChange(event,"phone");}}/>
+				<input className="textInput" type="text" name="" id="" placeholder="Senha" onChange={event => {handleClientDataChange(event,"passwordHash");}}/>
+				{/* <input className="textInput" type="text" name="" id="" placeholder="Confirme sua Senha"/> */}
+				<button className="submitInput" onClick={verifyInput}>Cadastrar</button>
+				{error && <InputError/>}
+			</div>
+	// </div>
+	//		</div >
 	);
 };
 

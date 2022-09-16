@@ -6,7 +6,9 @@ import { AES } from 'crypto-ts';
 // dotenv.config();
 
 
-const customAxios = axios.create({ baseURL: "http://192.168.3.14:8080/"});
+// Arrumar pra consummir o hash .env
+
+const customAxios = axios.create({ baseURL: "http://localhost:8080/"});
 
 function createPasswordHash(pw: string) {
 	console.log(`secret = ${process.env.ENCRYPT_SECRET}`);
