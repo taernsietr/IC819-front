@@ -3,7 +3,7 @@ import checkoutImage from '../../assets/icons/checkout.png';
 import '../Checkout/checkout.css'
 import pixLogo from '../../assets/icons/Pix_logo.png';
 
-function Checkout() {
+const Checkout = () =>{
   return (
 
     <div>

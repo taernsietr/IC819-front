@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProductAdd.css";
 import ProductAddImg from "../../assets/icons/productAdd.png";
-import DishPicture from "../../assets/img/AntepastoDeBerinjela.jpg";
+import DishPicture from "./lasanha-bolonhesa.jpg";
 
 const ProductAdd = () => {
 	return(
