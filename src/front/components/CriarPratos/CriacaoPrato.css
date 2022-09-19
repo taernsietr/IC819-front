@@ -1,0 +1,158 @@
+.newDishDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+
+}
+.newDish{
+  width: 45%;
+}
+
+input{
+  width: 100%;
+}
+
+.dishName{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+.dishName label{
+  margin-bottom: 1.5%;
+}
+
+.dishName span{
+  margin-left: 75%;
+  word-wrap: normal;
+  
+}
+
+.cardapioType{
+  display: flex;
+  flex-direction: column;
+}
+
+.cardapioType select{
+  width: 35%;
+  margin-top: 1.5%;
+  margin-bottom: 9%;
+}
+
+.DishDescription{
+  width: 100%;
+  height: 130px;
+}
+
+label{
+  font-weight: 600;
+  font-size: larger;
+}
+
+.dishDescription{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  
+}
+
+.dishDescription textarea{
+  height: 120px;
+}
+
+.dishDescription span{
+  margin-left: 74%;
+}
+
+.dishWeight{
+  display: flex;
+  flex-direction: row;
+}
+
+.dishWeight input{
+  width: 10%;
+}
+
+.weightLabel label{
+  margin-bottom: 2%;
+}
+
+.weightLabel{
+  display: flex;
+  flex-direction: column;
+}
+
+.weightLabel input{
+  width: 15%;
+}
+
+.valueKgDiv{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.priceFlex{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.priceFlex input{
+  width: 17%;
+  margin-top: 2%;
+}
+
+.quantityAvailable{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.quantityAvailable input{
+  margin-top: 2%;
+  width: 10%;
+
+}
+
+.imgDish{
+  width: 100%;
+  padding: 6%;
+}
+
+.dishImgDiv{
+  margin-top: 5%;
+  width: 50%;
+  margin-bottom: 10%;
+}
+
+.dishImgDiv h5{
+  margin-bottom: 8%;
+}
+
+.borderImg{
+  border-width: 1;
+  border-style: dotted;
+  
+}
+
+.cartFlex{
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+
+.buttonPay{
+
+  border-radius: 3px;
+  color: #D9D9D9;
+  font-weight: 800;
+  background-color: #AD1814;
+  border: none;
+  width: 25%;
+  font-size: larger;
+  margin-bottom: 5%;
+  padding: 5px;
+}

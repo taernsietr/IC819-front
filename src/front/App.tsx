@@ -11,6 +11,7 @@ import ProdutoAdicionado from './components/PaginaProduto/ProdutoAdicionado';
 import Carrinho from '../front/components/Carrinho/Carrinho';
 import Checkout from '../front/components/Checkout/checkout';
 import CriarPrato from './components/CriarPratos/CriarPrato';
+import CriacaoPrato from './components/CriarPratos/CriacaoPrato';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Produto/> */}
       {/* <Carrinho/> */}
       {/* <Checkout/> */}
-      <CriarPrato/>
+      {/* <CriarPrato/> */}
+      <CriacaoPrato/>
       <Footer />
 
 
