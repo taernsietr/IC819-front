@@ -1,5 +1,7 @@
+// Items
+
 export interface ItemsData {
-    id?: string,
+    id: string,
     name: string,
     imageName: string,
     description: string,
@@ -8,21 +10,57 @@ export interface ItemsData {
     value : number,
     weight: number 
 }
-  
-export interface Menu {
+
+export interface ItemModal {
+    id: string,
+    name: string,
+    imageName: string,
+    description: string,
+    enable?: boolean,
+    value : number,
+    availableInStock?: number,
+    weight: number 
+    show: boolean,
+    onClick: React.MouseEventHandler<HTMLDivElement>,
+    onKeyPress: any,
+}
+
+// Menu
+
+export interface MenuType {
     name: string,
     available?: boolean,
     description : string,
     itemsData: ItemsData[]
 }
 
+// Cart
+
+export interface CartItem {
+    item: ItemsData;
+    quantity?: number;
+}
+
+// Filter
+
+export interface PropsEvent {
+    search: string,
+    changeTerm: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
 export interface MenuFilter {
     name: string,
     available?: boolean,
-    filter: string,
     description : string,
+    filter: string,
     itemsData: ItemsData[]
 }
+
+export interface PropsFilter {
+    filter: string,
+}
+
+// Client
 
 export interface ClientDataType {
 	name: string,
@@ -40,27 +78,4 @@ export interface ClientDataInput {
 	email: boolean,
 	phone: boolean,
 	passwordHash: boolean
-}
-
-
-export interface PropsFilter {
-    filter: string,
-}
-
-export interface PropsEvent {
-    search: string,
-    changeTerm: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
-
-export interface ItemModal {
-    id?: number,
-    name: string,
-    imageName: string,
-    description: string,
-    enable?: boolean,
-    value : number,
-    availableInStock?: number,
-    weight: number 
-    show: boolean,
-    onClick: React.MouseEventHandler<HTMLDivElement>
 }

@@ -2,10 +2,10 @@ import React, {useEffect,useState} from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./DropDownMenu.css";
 import { getMenus } from "../../../hooks/resources/getMenus";
-import {Menu} from "../../../types/types";
+import {MenuType} from "../../../types/types";
 
 const DropDownMenu = () => {
-	const data: Menu[] = getMenus("/menu/items");
+	const data: MenuType[] = getMenus("/menu/items");
 	const [menu,setMenu] = useState(data); 
 
 	useEffect(() => {

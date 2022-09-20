@@ -1,13 +1,61 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Item.css";
 import  Modal  from "react-bootstrap/Modal";
-import { ItemModal} from "../../types/types";
-
+import { CartItem, ItemModal } from "../../types/types";
 import exit from "../../assets/icons/exit.png";
 import addCart from "../../assets/img/addCart.png";
+import { cartController } from "../../hooks/user/cart";
 
 const Item = (props: ItemModal) => {
+	const [quantity,setQuantity] = useState<number>(0);
 	
+	function addQuantity() {
+		setQuantity( quantity + 1);
+	}
+
+	function decreaseQuantity() {
+		if (quantity <= 0) {
+			return quantity;
+		} else {
+			setQuantity( quantity - 1);
+		}
+	}
+
+	function addToCart(): void {
+		let order: CartItem =
+		{
+			item: {
+				id: props.id,
+				name: props.name,
+				imageName: props.imageName,
+				description: props.description,
+				enable: props.enable,
+				availableInStock: props.availableInStock,
+				value : props.value,
+				weight: props.weight,
+				
+			},
+			quantity: quantity
+		}; 
+		console.log(order);
+		// cartController(order);
+		// return order;
+	}
+
+	// Função para fechar o modal caso o usuário aperte esc
+	useEffect(() => {
+		const keyDownHandler = (event: any) => {
+		  if (event.key === 'Escape') {
+				props.onKeyPress();
+		  }
+		};
+		document.addEventListener("keydown", keyDownHandler);
+		
+		return () => {
+		  document.removeEventListener('keydown', keyDownHandler);
+		};
+	  }, []);
+
 	return (		
 		<>	
 			<Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show = {props.show}>
@@ -24,31 +72,20 @@ const Item = (props: ItemModal) => {
 
 						<h1> {props.name} </h1>
 						<span className="productDescription" > {props.description}</span>
-						<h3>{props.weight}</h3>
+						<h3>{props.weight} gr</h3>
 
 						<div className="setQuantity">
 							<span> R$ {props.value}</span>
 							<div className="inputQuantity">
-								<button className="minus" > - </button>
-								<input placeholder="0" type="number" name="" id="" /> 
-								<button className="plus" > + </button>
+								<button onClick={decreaseQuantity} className="minus" > - </button>
+								<input  placeholder={quantity.toString()} type="number" name="" id="" /> 
+								<button onClick={addQuantity} className="plus" > + </button>
 							</div>
     
 						</div>
-						{/* <hr/>
-					<h3> Opção congelada  </h3>
-					<div className="setQuantity">
-						<span> R$  20,00 </span>
-						<div className="inputQuantity">
-							<button className="minus" > - </button>
-							<input  placeholder="0" type="number" name="" id="" /> 
-							<button className="plus" > + </button>
-						</div>
-      
-					</div> */}
   
-						<div className="cartFlex" >
-							<img className="addCart" onClick={() => alert("Produto adicionado")} src={addCart}/>
+						<div className="cartFlex" onClick={addToCart} >
+							<img className="addCart" src={addCart}/>
 						</div>
   
 					</div>

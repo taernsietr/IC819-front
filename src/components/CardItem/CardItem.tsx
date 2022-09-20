@@ -17,12 +17,12 @@ const CardItem = (item: ItemsData)  => {
 					<div className="cardItemText">
 						<p id="cardItemName">{item.name}</p>
 						<p id="cardItemDescription">{item.description}</p>
-						<p id="cardItemWeight">{item.weight.toString()} gr</p>
+						<p id="cardItemWeight">{item.weight.toString()}gr</p>
 						<p id="cardItemPrice">R$ {item.value.toString()}</p>  
 					</div>  
 				</button>
 			</div>
-			<Item show={modalShow} onClick={closeModal} name={item.name} imageName={item.imageName} description={item.description}  value={item.value} weight={item.weight}/>
+			<Item show={modalShow} onKeyPress={closeModal} onClick={closeModal} id={item.id} name={item.name} imageName={item.imageName} description={item.description}  value={item.value} weight={item.weight}/>
 		</>
 	);
 };

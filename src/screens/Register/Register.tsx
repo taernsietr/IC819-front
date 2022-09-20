@@ -6,7 +6,7 @@ import {ClientDataType} from "../../types/types";
 import { createClient } from "../../hooks/user/createClient";
 import { filterInput } from "./filterRegister";
 
-const Register= ()  => {
+const Register= (state:any)  => {
   
 	const [clientData, setClientData] = useState<ClientDataType>({name: "", cpf: "", email: "", phone: "", passwordHash: ""});
 	const [error, setError] = useState<boolean>(false);
@@ -17,6 +17,7 @@ const Register= ()  => {
 		object[nomeParametro as keyof ClientDataType] = value;
 		setClientData(object);                                  
 	}
+
 	
 	const verifyInput  = (event: any) => {
 		setError(true);
@@ -35,6 +36,7 @@ const Register= ()  => {
 		);
 	}
 	
+	// Criar cliente 
 	// function submitData() {
 	// 	createClient(clientData);
 	// }
@@ -51,6 +53,7 @@ const Register= ()  => {
 
 			<div className="flexInput">
 				<h1>Informe os dados abaixo</h1>
+				<h1>{state.name}</h1>
 				<input className="textInput" type="text" name="" id="" placeholder="Nome" onChange={event => {handleClientDataChange(event,"name");}}/>
 				<input className="textInput" type="text" name="" id="" placeholder="CPF" onChange={event => {handleClientDataChange(event,"cpf");}} />
 				<input className="textInput" type="text" name="" id="" placeholder="E-mail" onChange={event => {handleClientDataChange(event,"email");}}/>

@@ -33,7 +33,7 @@ const CardMenu = ( menu:MenuFilter)  => {
                     
 			}).map((items, key) => {
 				return (
-					<CardItem key={key} name={items.name} imageName={items.imageName} description={items.description} enable={items.enable} value={items.value} weight={items.weight}/>
+					<CardItem key={key} id={items.id} name={items.name} imageName={items.imageName} description={items.description} enable={items.enable} value={items.value} weight={items.weight}/>
 				);
 			})}
 		</div>

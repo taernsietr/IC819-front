@@ -2,11 +2,11 @@ import React, {useEffect,useState} from "react";
 import { getMenus } from "../../hooks/resources/getMenus";
 import "./ContainerMenus.css";
 import CardMenu from "../CardMenu/CardMenu";
-import {Menu,PropsFilter} from "../../types/types";
+import {MenuType,PropsFilter} from "../../types/types";
 
 const ContainerMenus = (props: PropsFilter) => {
     
-	const data: Menu[] = getMenus("/menu/items");
+	const data: MenuType[] = getMenus("/menu/items");
 	const [menu,setMenu] = useState(data); 
 
 	useEffect(() => {
