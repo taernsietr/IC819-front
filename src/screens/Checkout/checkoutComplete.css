@@ -1,0 +1,25 @@
+h2{
+  color: #18B115;
+  font-weight: 600;
+}
+
+.checkoutCompleteDiv{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  border-width: 0.5;
+  border-style: solid;
+  padding: 4%;
+  border-radius: 5px;
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.completeDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content:  center;
+  align-items: center;
+}

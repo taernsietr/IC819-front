@@ -46,7 +46,6 @@ const Checkout = () =>{
 
     <div className="orderDelivery" >
         <h3> Endereço de Entrega </h3>
-       
       <input type="text" placeholder="CEP"  name="" id="" />
       <div className="lograNumber" >
       <input type="text" placeholder="Logradouro"  name="" id="" />
@@ -76,15 +75,12 @@ const Checkout = () =>{
 
   <div className="paymentDiv" >
       <span className="divName" >Métodos de pagamento</span>
-
     <div className="changePayment"  >
       <img width="30px" src={pixLogo} alt="" />
       <span>PIX</span>
       <span className='changeButton' > Mudar Método </span>
     </div>
-    
     <span className="methodDescription" >Pague com Pix a qualquer momento! Os pagamentos são simples, práticos e realizados em segundos. </span>
-
   </div>
 
   <div className="paymentButtonDiv" >
