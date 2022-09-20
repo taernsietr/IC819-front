@@ -2,11 +2,10 @@ import React from 'react';
 import '../CriarPratos/CriacaoPrato.css'
 import addDish from  '../../assets/img/addImageDish.png'
 
-
 function CriacaoPrato( ) {
   return(
-<div className="newDishDiv"  >
-  <div className="newDish" >
+<div className="newDishDiv">
+  <div className="newDish">
       <h1 > Novo Prato </h1>
 
       <div className="dishName" >
@@ -54,8 +53,6 @@ function CriacaoPrato( ) {
       <input type="text" name="quantity" id="" />
     </div>
 
-
-
     <div className="dishImgDiv" >
       <h5>Imagem do prato</h5>
         <div className="borderImg">
@@ -68,9 +65,7 @@ function CriacaoPrato( ) {
     </div>
 
   </div>
-
 </div>
-  )}
-
+)}
 
 export default CriacaoPrato
