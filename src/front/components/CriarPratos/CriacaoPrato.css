@@ -98,11 +98,12 @@ label{
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 2%;
 }
 
 .priceFlex input{
   width: 17%;
-  margin-top: 2%;
+  
 }
 
 .quantityAvailable{
@@ -120,16 +121,19 @@ label{
 .imgDish{
   width: 100%;
   padding: 6%;
+  cursor: pointer;
 }
 
 .dishImgDiv{
   margin-top: 5%;
   width: 50%;
   margin-bottom: 10%;
+  
 }
 
 .dishImgDiv h5{
   margin-bottom: 8%;
+  
 }
 
 .borderImg{

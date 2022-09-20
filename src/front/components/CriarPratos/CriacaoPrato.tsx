@@ -12,13 +12,13 @@ function CriacaoPrato( ) {
 
        <div className="dishName" >
        <label htmlFor="nome">Nome do Prato (OBRIGATÓRIO)  </label>
-      <input type="text"  name="nome" id="" />
-      <span>0/40 Caracteres</span>
+      <input required type="text"  name="nome" id="" />
+      <span>0/40 Caracteres // falta fazer o contador  </span>
       </div>
 
       <div className="cardapioType" >
         <label htmlFor="typeDish"> CARDÁPIOS (OBRIGATÓRIO)</label>
-        <select name="typeDish" id="">
+        <select required name="typeDish" id="">
           <option value="Type1">Todos os Cardápios</option>
           <option value="Type2">Cardapio2</option>
           <option value="Type3">Cardapio3</option>
@@ -28,14 +28,14 @@ function CriacaoPrato( ) {
       <div className="dishDescription" >
       <label htmlFor="Description" >Descrição do Prato </label>
       <textarea  name="Description"  id=""></textarea>
-      <span>0/250 caracteres</span>
+      <span>0/250 caracteres // falta o contador   </span>
       </div>
 
      
       <div className="weightLabel" >
         <label htmlFor="dishWeight" >Peso </label>
           <div className="dishWeight" >
-            <input type="text" placeholder="Peso"  name="dishWeight" id="" />
+            <input required type="text"   name="dishWeight" id="" />
             <select name="" id="">
               <option value="g">g</option>
               <option value="K">K</option>
@@ -44,10 +44,10 @@ function CriacaoPrato( ) {
       </div>
 
       <div className="valueKgDiv" >
-        <label htmlFor="dishWeight" >ValorKg </label>
-        <div className="priceFlex" >
+        <label htmlFor="dishWeight">ValorKg </label>
+        <div className="priceFlex">
          <b> <span>  R$</span></b>
-          <input type="text" name="" id="" />
+          <input type="text" name="" id=""/>
         </div>
       </div>
 
