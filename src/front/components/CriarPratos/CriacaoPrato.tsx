@@ -3,17 +3,16 @@ import '../CriarPratos/CriacaoPrato.css'
 import addDish from  '../../assets/img/addImageDish.png'
 
 
-
 function CriacaoPrato( ) {
   return(
-    <div className="newDishDiv"  >
-      <div className="newDish" >
-        <h1 > Novo Prato </h1>
+<div className="newDishDiv"  >
+  <div className="newDish" >
+      <h1 > Novo Prato </h1>
 
-       <div className="dishName" >
-       <label htmlFor="nome">Nome do Prato (OBRIGATÓRIO)  </label>
-      <input required type="text"  name="nome" id="" />
-      <span>0/40 Caracteres // falta fazer o contador  </span>
+      <div className="dishName" >
+        <label htmlFor="nome">Nome do Prato (OBRIGATÓRIO)  </label>
+        <input required type="text"  name="nome" id="" />
+        <span>0/40 Caracteres // falta fazer o contador  </span>
       </div>
 
       <div className="cardapioType" >
@@ -26,12 +25,11 @@ function CriacaoPrato( ) {
       </div>  
 
       <div className="dishDescription" >
-      <label htmlFor="Description" >Descrição do Prato </label>
-      <textarea  name="Description"  id=""></textarea>
-      <span>0/250 caracteres // falta o contador   </span>
+        <label htmlFor="Description" >Descrição do Prato </label>
+        <textarea  name="Description"  id=""></textarea>
+        <span>0/250 caracteres // falta o contador   </span>
       </div>
 
-     
       <div className="weightLabel" >
         <label htmlFor="dishWeight" >Peso </label>
           <div className="dishWeight" >
@@ -40,15 +38,15 @@ function CriacaoPrato( ) {
               <option value="g">g</option>
               <option value="K">K</option>
             </select>
-        </div>
+          </div>
       </div>
 
       <div className="valueKgDiv" >
         <label htmlFor="dishWeight">ValorKg </label>
-        <div className="priceFlex">
-         <b> <span>  R$</span></b>
-          <input type="text" name="" id=""/>
-        </div>
+          <div className="priceFlex">
+            <b> <span>  R$</span></b>
+            <input type="text" name="" id=""/>
+          </div>
       </div>
 
     <div className="quantityAvailable">
@@ -60,24 +58,18 @@ function CriacaoPrato( ) {
 
     <div className="dishImgDiv" >
       <h5>Imagem do prato</h5>
-      <div className="borderImg">
-        <img className="imgDish" src={addDish} alt="" />
-      </div>
+        <div className="borderImg">
+          <img className="imgDish" src={addDish} alt="" />
+        </div>
     </div>
-
 
     <div className="cartFlex" >
         <button className="buttonPay" >Salvar</button>
     </div>
 
-    </div>
+  </div>
 
-
-
-
-
-
-    </div>
+</div>
   )}
 
 
