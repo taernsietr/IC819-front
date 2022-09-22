@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/taernsietr/IC819-backend#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
     "jsonwebtoken": "^8.5.1",
     "mariadb": "^3.0.1",
     "sequelize": "^6.21.4"

@@ -5,12 +5,9 @@ import cartIcon from "../../assets/icons/cart.png";
 import imgCart from "./lasanha-bolonhesa.jpg";
 import { CartItem } from "../../types/types";
 
-import {cartController} from "../../hooks/user/cart";
 
 const Cart = () => {
 	const [conter, setconter] = React.useState(0);
-	const [cart, setCart] = useState<CartItem[]>([]);
-	console.log(cartController);
 
 	return(
 		<div>

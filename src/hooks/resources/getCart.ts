@@ -1,14 +1,13 @@
-import {CartItem} from "../../types/types";
 import axios from "axios";
 const customAxios = axios.create({ baseURL: "http://localhost:8080/"});
 
-export const addToCart = async (itemToCart: CartItem) =>  {
+export async function getCart() {
 	try {
-		const response = await customAxios.post("/adicionarItem", itemToCart);
+		const response = await customAxios.get("/");
 	    console.log(response.data);
 	} catch(error) {
 	    console.log(error);
 	}
-};
+}
 
 

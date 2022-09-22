@@ -4,7 +4,7 @@ import  Modal  from "react-bootstrap/Modal";
 import { CartItem, ItemModal } from "../../types/types";
 import exit from "../../assets/icons/exit.png";
 import addCart from "../../assets/img/addCart.png";
-import { cartController } from "../../hooks/user/cart";
+import { addToCart } from "../../hooks/user/cart";
 
 const Item = (props: ItemModal) => {
 	const [quantity,setQuantity] = useState<number>(0);
@@ -21,8 +21,8 @@ const Item = (props: ItemModal) => {
 		}
 	}
 
-	function addToCart(): void {
-		let order: CartItem =
+	function addItemToCart(): void {
+		let itemToCart: CartItem =
 		{
 			item: {
 				id: props.id,
@@ -37,9 +37,8 @@ const Item = (props: ItemModal) => {
 			},
 			quantity: quantity
 		}; 
-		console.log(order);
-		// cartController(order);
-		// return order;
+		addToCart(itemToCart);
+		console.log("Console do front, componente ITEM: ", itemToCart);
 	}
 
 	// Função para fechar o modal caso o usuário aperte esc
@@ -52,7 +51,7 @@ const Item = (props: ItemModal) => {
 		document.addEventListener("keydown", keyDownHandler);
 		
 		return () => {
-		  document.removeEventListener('keydown', keyDownHandler);
+		  document.removeEventListener("keydown", keyDownHandler);
 		};
 	  }, []);
 
@@ -84,7 +83,7 @@ const Item = (props: ItemModal) => {
     
 						</div>
   
-						<div className="cartFlex" onClick={addToCart} >
+						<div className="cartFlex" onClick={addItemToCart} >
 							<img className="addCart" src={addCart}/>
 						</div>
   

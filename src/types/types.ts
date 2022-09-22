@@ -38,7 +38,7 @@ export interface MenuType {
 
 export interface CartItem {
     item: ItemsData;
-    quantity?: number;
+    quantity: number;
 }
 
 // Filter
