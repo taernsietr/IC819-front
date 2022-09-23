@@ -7,14 +7,14 @@ import addCart from "../../assets/img/addCart.png";
 import { addToCart } from "../../hooks/user/cart";
 
 const Item = (props: ItemModal) => {
-	const [quantity,setQuantity] = useState<number>(0);
+	const [quantity,setQuantity] = useState<number>(1);
 	
 	function addQuantity() {
 		setQuantity( quantity + 1);
 	}
 
 	function decreaseQuantity() {
-		if (quantity <= 0) {
+		if (quantity <= 1) {
 			return quantity;
 		} else {
 			setQuantity( quantity - 1);
@@ -84,7 +84,9 @@ const Item = (props: ItemModal) => {
 						</div>
   
 						<div className="cartFlex" onClick={addItemToCart} >
-							<img className="addCart" src={addCart}/>
+							<a href="http://localhost:3000/productAdd">
+								<img className="addCart" src={addCart}/>
+								</a>
 						</div>
   
 					</div>

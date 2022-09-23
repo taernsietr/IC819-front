@@ -43,7 +43,8 @@
   .productSelectInfo{
     display: flex;
     flex-direction: column;
-    justify-content:center;  
+    justify-content:center;
+    right: 15.5  
   }
   
   .productInfo{

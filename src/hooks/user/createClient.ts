@@ -8,7 +8,10 @@ import { AES } from 'crypto-ts';
 
 // Arrumar pra consummir o hash .env
 
-const customAxios = axios.create({ baseURL: "http://localhost:8080/"});
+const customAxios = axios.create({
+		baseURL: "http://localhost:8080/",
+		withCredentials: true,
+	})
 
 function createPasswordHash(pw: string) {
 	console.log(`secret = ${process.env.ENCRYPT_SECRET}`);

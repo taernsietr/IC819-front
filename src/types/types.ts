@@ -34,11 +34,26 @@ export interface MenuType {
     itemsData: ItemsData[]
 }
 
+export interface ProductAddItem {
+    item?: ItemsData;
+    quantity?: number;
+}
+
 // Cart
 
 export interface CartItem {
     item: ItemsData;
     quantity: number;
+}
+
+export interface Result{
+    items: CartItem[],
+    itemsPrice: number,
+}
+
+export interface CartResponse{
+    code: string,
+    result: Result,
 }
 
 // Filter

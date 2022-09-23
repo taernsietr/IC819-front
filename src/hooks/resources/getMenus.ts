@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {MenuType} from "../../types/types";
 
-const customAxios = axios.create({ baseURL: "http://localhost:8080/"});
+const customAxios = axios.create({
+		baseURL: "http://localhost:8080/",
+		withCredentials: true,
+	})
 
 export const getMenus = (url: string) => {
  

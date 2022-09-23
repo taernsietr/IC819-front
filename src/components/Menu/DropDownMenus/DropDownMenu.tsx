@@ -5,7 +5,7 @@ import { getMenus } from "../../../hooks/resources/getMenus";
 import {MenuType} from "../../../types/types";
 
 const DropDownMenu = () => {
-	const data: MenuType[] = getMenus("/menu/items");
+	const data: MenuType[] = getMenus("/menu-items");
 	const [menu,setMenu] = useState(data); 
 
 	useEffect(() => {

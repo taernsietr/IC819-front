@@ -1,14 +1,13 @@
-import React, {useState, useEffect } from "react";
+import React, { useState } from "react";
 import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
 import ContainerMenus from "../../components/ContainerMenus/ContainerMenus";
-import { CartItem } from "../../types/types";
-import { getCart } from "../../hooks/resources/getCart";
+import { createCart } from "../../hooks/resources/cart";
 
 
 const HomeScreen = () => {	
 	const [term,setTerm] = useState("");
-	getCart();
+	createCart();
 
 	function changeTerm(event: any) {
 		const value = event.target.value;
