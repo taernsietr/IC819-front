@@ -19,8 +19,10 @@ export const addToCart = async (itemToCart: CartItem) =>  {
 
 export const removeFromCart = async (item: CartItem) =>  {
 	try {
+		console.log("ovo executa em")
 		const response = await customAxios.post("/remover-item", item);
-	    console.log(response.data);
+	  console.log(response.data);
+		return response;
 	} catch(error) {
 	    console.log(error);
 	}

@@ -7,13 +7,15 @@ import { CartItem, ProductAddItem } from "../../types/types";
 
 const ProductAdd = () => {
 
+	const [item, setItem] = useState({ item: { id: "", name: "", imageName: "", description: "", value: 0, weight: 0 }, quantity: 0 });
 	const itemResponse: CartItem = getAddCart();
-	const [item, setItem] = useState(itemResponse);
 
 	useEffect(() => {
-		if(itemResponse != item)
-			setItem(itemResponse);
+		if(itemResponse !== item) {
+				setItem(itemResponse);
+			};
 	},[itemResponse]);
+
 
 	const totalPrice = item.item.value * item.quantity;
 

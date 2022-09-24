@@ -11,13 +11,20 @@ import { removeAllCart, removeFromCart } from "../../hooks/user/cart";
 const Cart = () => {
 
 	function removeItemFromCart(item: any) {
+		console.log("to entrando");
 		removeFromCart(item);
-		window.location.reload();
+		setTimeout(() => {
+			window.location.reload();
+		}, 2000);
+		console.log("saindo");
 	}
+
 
 	function removeAllItemsFromCart() {
 		removeAllCart();
-		window.location.reload();
+		setTimeout(() => {
+			window.location.reload();
+		}, 2000);
 	}
 
 

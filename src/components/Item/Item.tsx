@@ -39,6 +39,7 @@ const Item = (props: ItemModal) => {
 		}; 
 		addToCart(itemToCart);
 		console.log("Console do front, componente ITEM: ", itemToCart);
+		alert("Produto adicionado ao carrinho!")
 	}
 
 	// Função para fechar o modal caso o usuário aperte esc
@@ -85,8 +86,10 @@ const Item = (props: ItemModal) => {
   
 						<div className="cartFlex" onClick={addItemToCart} >
 							<a href="http://localhost:3000/productAdd">
-								<img className="addCart" src={addCart}/>
-								</a>
+								<img className="addCart" src={addCart} />
+							</a>
+								
+						
 						</div>
   
 					</div>

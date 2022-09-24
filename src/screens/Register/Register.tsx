@@ -37,9 +37,9 @@ const Register= (state:any)  => {
 	}
 	
 	// Criar cliente 
-	// function submitData() {
-	// 	createClient(clientData);
-	// }
+	 function submitData() {
+	 	createClient(clientData);
+	 }
 
 	return (
 	// <div className="loginDiv">
@@ -60,7 +60,7 @@ const Register= (state:any)  => {
 				<input className="textInput" type="text" name="" id="" placeholder="Número" onChange={event => {handleClientDataChange(event,"phone");}}/>
 				<input className="textInput" type="text" name="" id="" placeholder="Senha" onChange={event => {handleClientDataChange(event,"passwordHash");}}/>
 				{/* <input className="textInput" type="text" name="" id="" placeholder="Confirme sua Senha"/> */}
-				<button className="submitInput" onClick={verifyInput}>Cadastrar</button>
+				<button className="submitInput" onClick={submitData}>Cadastrar</button>
 				{error && <InputError/>}
 			</div>
 	// </div>
